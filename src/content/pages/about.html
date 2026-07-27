@@ -20,7 +20,54 @@ eleventyComputed:
 
 {% block body %}
 
-    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+    <!-- ============================================ -->
+    <!--             Side By Side Reverse             -->
+    <!-- ============================================ -->
+
+    <section id="sbsr-2370">
+        <div class="cs-wrapper">
+            <p class="cs-header">
+                <strong>Redeemed Arrow</strong> sits at the intersection of strategy and compassion to bring about meaningful change in families. We are dedicated to providing exceptional therapy services that empower individuals and families to overcome challenges and achieve their goals.
+            </p>
+            <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/curve-arrow.svg" alt="arrow graphic" width="154" height="120">
+        </div>
+        <div class="cs-container">
+            <div class="cs-image-group">
+                <!--Main Image-->
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png" alt="therapist" width="565" height="814">
+                </picture>
+                <img class="cs-flower" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/flower-blur.svg" alt="flower blur" width="635" height="697">
+            </div>
+            <div class="cs-content">
+                <span class="cs-topper">Who We Are</span>
+                <h2 class="cs-title">The Founding Therapist</h2>
+                <p class="cs-text">
+                    Meet <strong>Rachael Elmore, MA, BCBA</strong> the amazing founder of <strong>Redeemed Arrow</strong>. Rachael is a Board Certified Behavior Analyst (BCBA) and Licensed Professional Counselor (LPC) with a passion for helping individuals and families navigate the challenges of life. With years of experience in the field, Rachael has dedicated her career to providing compassionate and effective therapy services that empower clients to achieve their goals and improve their quality of life.
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Digital Solutions Provider Agency
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Unicode, UTF8 & Character Sets The Ultimate Guide
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        WordPress Guides For The Advanced Beginner
+                    </li>
+                </ul>
+                <a href="" class="cs-button-solid">JOIN OUR COMMUNITY</a>
+            </div>
+        </div>
+    </section>
+                                
 
     <!-- If you want the page to have a "CTA", remove the {# and #} below -->
     {# {% include 'sections/cta.html' %} #}

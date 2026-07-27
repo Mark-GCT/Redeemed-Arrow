@@ -1,6 +1,6 @@
 ---
-title: "Welcome"
-description: "Your new website"
+title: "Home | Redeemed Arrow Behavior Consulting | Swansea, IL"
+description: "Redeemed Arrow Behavior Consulting is a leading behavioral consulting firm that helps foster and adoptive families unlock their full potential through evidence-based strategies and personalized approaches."
 permalink: "/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
@@ -22,6 +22,34 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
 
+    <script>
+    (function (w, d, s, o, f, js, fjs) {
+    w['circleWidget'] = o;
+    w[o] = w[o] || function () {
+        (w[o].q = w[o].q || []).push(arguments);
+    };
+    js = d.createElement(s);
+    fjs = d.getElementsByTagName(s)[0];
+    js.id = o;
+    js.src = f;
+    js.async = 1;
+    fjs.parentNode.insertBefore(js, fjs);
+    }(window, document, 'script', 'mw', 'https://redeemed-arrow-behavior-consulting.circle.so/external/widget.js'));
+
+    mw('init', {
+    community_public_uid: 'c5fe9c1f',
+    brand_color_dark: '#5C2D91',
+    brand_color_light: '#5C2D91',
+    default_appearance: 'dark',
+    });
+
+    // Optional: pass in a default space slug and/or post slug
+    // mw('setDefaults', {
+    //   space_slug: '',
+    //   post_slug: '',
+    // });
+    </script>
+
     <!-- To ensure proper validation, prevent errors, and encourage developers to check, schema's are an opt-in feature. They're very bespoke and requires some customising  -->
     <!-- Uncomment the code below to enable Structured Data, and test it when you deploy to Netlify - https://developers.google.com/search/docs/appearance/structured-data -->
     <!-- {% include "components/home-schema.html" %} -->
@@ -39,24 +67,9 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <div class="cs-flex">
                 <div class="cs-content-group">
                     <p class="cs-text">
-                        <strong>Redeemed Arrow Behavior Consulting</strong> is a leading behavioral consulting firm that helps individuals and organizations unlock their full potential through evidence-based strategies and personalized approaches.
+                        <strong>Redeemed Arrow Behavior Consulting</strong> is a leading behavioral consulting firm that helps foster & adoptive families unlock their full potential through evidence-based strategies and personalized approaches.
                     </p>
-                    <a href="" class="cs-button-solid">Book An Appointment</a>
-                </div>
-                <div class="cs-hours-group">
-                    <span class="cs-header">Business Hours</span>
-                    <div class="cs-hours">
-                        <span class="cs-day">Mon-Fri</span>
-                        <span class="cs-time">10AM-8PM</span>
-                    </div>
-                    <div class="cs-hours">
-                        <span class="cs-day">Sat</span>
-                        <span class="cs-time">11AM-6PM</span>
-                    </div>
-                    <div class="cs-hours">
-                        <span class="cs-day">Sun</span>
-                        <span class="cs-time">Closed</span>
-                    </div>
+                    <a href="" class="cs-button-solid">JOIN THE COMMUNITY</a>
                 </div>
             </div>
             <!--We need this wrapper div so we can place the cs-tagline around the cs-picture image. We can only place images inside picture tags so the cs-tagline can't go in there. hence we HAVE to make a div wrapper so they can be placed together-->
@@ -92,57 +105,41 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <!--Long Left Image-->
             <picture class="cs-picture cs-picture1">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair5.jpg">
+                <source media="(max-width: 600px)" srcset="/assets/images/family-close.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair5.jpg">
-                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair5.jpg" alt="hair salon" width="349" height="590">
+                <source media="(min-width: 601px)" srcset="/assets/images/family-close.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/family-close.jpg" alt="Happy family close up." width="349" height="590">
+                <!--Image by <a href="https://pixabay.com/users/alisadyson-25286447/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7257182">AlisaDyson</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7257182">Pixabay</a>-->
             </picture>
             <!--Top right image-->
             <picture class="cs-picture cs-picture2">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair6.jpg">
+                <source media="(max-width: 600px)" srcset="/assets/images/family-party.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair6.jpg">
-                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair6.jpg" alt="hair salon" width="281" height="387">
+                <source media="(min-width: 601px)" srcset="/assets/images/family-party.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/family-party.jpg" alt="Family Party" width="281" height="387">
+                <!--Image by <a href="https://pixabay.com/users/davm2598-10060465/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5134828">DAVM2598</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5134828">Pixabay</a>-->
             </picture>
             <!--Bottom right image-->
             <picture class="cs-picture cs-picture3">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair7.jpg">
+                <source media="(max-width: 600px)" srcset="/assets/images/mom-child.jpg">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair7.jpg">
-                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/hair7.jpg" alt="hair salon" width="281" height="280">
+                <source media="(min-width: 601px)" srcset="/assets/images/mom-child.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/mom-child.jpg" alt="Happy mom and child." width="281" height="280">
+                <!--Image by <a href="https://pixabay.com/users/sasint-3639875/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1807500">sasint</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1807500">Pixabay</a>-->
             </picture>
             <!--Seal-->
-            <img class="cs-seal" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/seal.svg" alt="seal" width="150" height="150">
+            
         </div>
         <div class="cs-content">
-            <span class="cs-topper">Hair Salon Services</span>
-            <h2 class="cs-title">Life Is More Beautiful When You Meet The Right Hairdresser</h2>
+            <span class="cs-topper">PARENT COACHING SERVICES</span>
+            <h2 class="cs-title">Transform Your Family's Dynamics With Expert Parent Coaching</h2>
             <p class="cs-text">
-                The Hair salon Stitch pack is designed specifically for a hairdressers, salons, and beauty centers, with a modern high end feel to match the expectations for design in this industry. These Stitches are great for anything and everything hair and beauty but can also be repurposed for anything high end or luxury.
+                Unlock the secrets to stronger family relationships and improved communication with our personalized parent coaching services utilizing evidence-based strategies and trauma-informed approaches.
             </p>
-            <div class="cs-contact-group">
-                <a class="cs-link" href="mailto:Info@health&wellness.com">
-                    <picture class="cs-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/pin-hair.svg" alt="icon" width="24" height="24">
-                    </picture>
-                    <div class="cs-info">
-                        <span class="cs-header">Send A Message</span>
-                        <span class="cs-link-content">Info@hairstyle.com</span>
-                    </div>
-                </a>
-                <a class="cs-link" href="">
-                    <picture class="cs-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mail-hair.svg" alt="icon" width="24" height="24">
-                    </picture>
-                    <div class="cs-info">
-                        <span class="cs-header">Visit Us At</span>
-                        <span class="cs-link-content">123 Fake St, Highland, IN</span>
-                    </div>
-                </a>
-            </div>
-            <a href="" class="cs-button-solid" aria-label="learn more about us">Learn More</a>
+            
+            <a href="" class="cs-button-solid" aria-label="sign up now">SIGN UP NOW</a>
         </div>
     </div>
     <!--Zen Leaf Group-->
@@ -164,57 +161,100 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 				<img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people9.jpg" alt="people" width="586" height="690" />
 			</picture>
 			<div class="cs-content">
-				<span class="cs-topper">Our Features</span>
-				<h2 class="cs-title">Care That Transforms Lives</h2>
+				<span class="cs-topper">WHAT WE DO</span>
+				<h2 class="cs-title">FOSTER & ADOPTIVE FAMILY SUPPORT</h2>
 				<p class="cs-text">
-					Our mission goes beyond conversation; we aim to empower you to progress with purpose, insight, and empathy. Together, we’ll navigate your journey,
-					ensuring you feel supported and understood every step of the way.
+					We provide expert behavioral consulting services to help adoptive and foster families achieve their goals. Our team of experienced consultants uses evidence-based strategies to deliver personalized solutions that drive meaningful results.
 				</p>
-				<a href="" class="cs-button-solid">Start Your Journey Today</a>
+				<a href="" class="cs-button-solid">JOIN OUR COMMUNITY</a>
 			</div>
 		</div>
 		<ul class="cs-card-group">
 			<li class="cs-item">
 				<img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy1.svg" alt="icon" width="120" height="120" />
 				<div class="cs-flex">
-					<h3 class="cs-h3">Licensed Expertise</h3>
+					<h3 class="cs-h3">LICENSED EXPERTISE</h3>
 					<p class="cs-item-text">
-						Our dedicated therapists focus on trauma recovery and emotional wellness, providing personalized support to help you heal and thrive in your
-						journey to well-being.
+						Headed up by a Board Certified Behavior Analyst (BCBA), our team of licensed professionals is dedicated to providing the highest quality care and support for your family.
 					</p>
 				</div>
 			</li>
 			<li class="cs-item">
 				<img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy2.svg" alt="icon" width="120" height="120" />
 				<div class="cs-flex">
-					<h3 class="cs-h3">Consistent Availability</h3>
+					<h3 class="cs-h3">BEHAVIORAL COACHING</h3>
 					<p class="cs-item-text">
-						No more waiting—get matched with a professional and begin your sessions in just a few days, ensuring a swift start to your journey.
+                        We provide personalized behavioral coaching to help you navigate the challenges of foster and adoptive parenting, equipping you with the tools and strategies you need to succeed.
 					</p>
 				</div>
 			</li>
 			<li class="cs-item">
 				<img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy3.svg" alt="icon" width="120" height="120" />
 				<div class="cs-flex">
-					<h3 class="cs-h3">Goal-Oriented Process</h3>
+					<h3 class="cs-h3">APPLIED BEHAVIORAL ANALYSIS (ABA)</h3>
 					<p class="cs-item-text">
-						We assist you in recognizing and monitoring tangible, measurable progress, ensuring that you can see how far you've come in your journey.
-					</p>
+						Our team utilizes Applied Behavioral Analysis (ABA) techniques to help you understand and modify behavior, promoting positive change and growth for your family.
 				</div>
 			</li>
 			<li class="cs-item">
 				<img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy4.svg" alt="icon" width="120" height="120" />
 				<div class="cs-flex">
-					<h3 class="cs-h3">Client-First Experience</h3>
+					<h3 class="cs-h3">CERTIFIED TRAUMA INFORMED CARE</h3>
 					<p class="cs-item-text">
-						From our initial intake process to scheduling, every aspect is designed with your needs in mind, ensuring a seamless and supportive experience.
+                        Our team is certified in Trauma Informed Care, ensuring that we approach every situation with sensitivity and understanding, and provide the support you need to heal and thrive.
 					</p>
 				</div>
 			</li>
 		</ul>
 	</div>
 </section>
-                                
+
+<!-- ============================================ -->
+<!--             Side By Side Reverse             -->
+<!-- ============================================ -->
+
+<section id="sbsr-2374">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">WHY CHOOSE US</span>
+            <h2 class="cs-title">PROFESSIONAL BEHAVIORAL CONSULTING</h2>
+            <p class="cs-text">
+                We provide expert behavioral consulting services to help adoptive and foster familiesachieve their goals. Our team of experienced consultants uses evidence-based strategies to deliver personalized solutions that drive meaningful results.
+            </p>
+        </div>
+        <div class="cs-flex">
+            <div class="cs-content2">
+                <h3 class="cs-h3">Trauma-Informed Applied Behavioral Analysis (TIABA)</h3>
+                <p class="cs-text">
+                    Our trauma-informed approach ensures that we recognize the impact of past experiences on present behavior. We partner with you to create a safe and supportive environment where clients can explore their challenges and develop effective coping strategies. 
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Recognize emotional triggers and respond healthily.
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Heal past experiences through trauma-informed care.
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Build self-awareness to align with your values and aspirations.
+                    </li>
+                </ul>
+                <a href="" class="cs-link">SIGN UP NOW</a>
+            </div>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people3.jpg">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people3.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people3.jpg" alt="people talking" width="528" height="378">
+            </picture>
+        </div>
+    </div>
+</section>
+
 
 <!-- ============================================ -->
 <!--                   Pricing                    -->
@@ -223,123 +263,103 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 <section id="pricing-861">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Pricing</span>
-            <h2 class="cs-title">Simple & Transparent Pricing</h2>
+            <span class="cs-topper">OUR MEMBERSHIP TIERS</span>
+            <h2 class="cs-title">THREE MEMBERSHIP LEVELS</h2>
             <p class="cs-text">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
+                We offer three membership tiers to meet every family where they are. Each tier is designed to provide the right level of support and resources to help you achieve your goals. Choose the membership that best fits your needs and start your journey towards a brighter future today.
             </p>
         </div>
         <ul class="cs-card-group">
             <li class="cs-item">
                 <div class="cs-top">
-                    <span class="cs-package">Individual</span>
-                    <span class="cs-price">$64</span>
-                    <span class="cs-desc">Per Sesson</span>
+                    <span class="cs-package">SUPPORTED</span>
+                    <span class="cs-price">$47</span>
+                    <span class="cs-desc">Per Month</span>
                     <picture class="cs-background">
                         <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="topographic" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
                     </picture>
                 </div>
                 <ul class="cs-ul">
                     <li class="cs-li">
-                        All available starter feature
+                        Full training vault access
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                     <li class="cs-li">
-                        Medical service 24/7
+                        Resource library access
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                     <li class="cs-li">
-                        Customer agent service
+                        Community support access
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                     <li class="cs-li">
-                        Professional Service
+                        On-demand re-plays of all live sessions
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
-                    <li class="cs-li cs-disabled">
-                        2 dedicated experts
-                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
-                    </li>
-                    <li class="cs-li cs-disabled">
-                        Consultation with a Senior experts
+                    <li class="cs-li">
+                        New member cohort training session
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                 </ul>
-                <a href="" class="cs-button-solid cs-price-button">Book Appointment</a>
+                <a href="" class="cs-button-solid cs-price-button">SIGN UP</a>
             </li>
             <li class="cs-item cs-popular">
                 <div class="cs-top">
-                    <span class="cs-package">Couples</span>
-                    <span class="cs-price">$135</span>
-                    <span class="cs-desc">Per Sesson</span>
+                    <span class="cs-package">EQUIPPED</span>
+                    <span class="cs-price">$97</span>
+                    <span class="cs-desc">Per Month</span>
                     <picture class="cs-background">
                         <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="topographic" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
                     </picture>
                 </div>
                 <ul class="cs-ul">
                     <li class="cs-li">
-                        All available starter feature
+                        Everything in Supported
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                     <li class="cs-li">
-                        Medical service 24/7
+                        Live group coaching sessions 2x per month
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                     <li class="cs-li">
-                        Customer agent service
+                        Access to Ask-Me-Anything thread
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                     <li class="cs-li">
-                        Professional Service
-                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
-                    </li>
-                    <li class="cs-li">
-                        2 dedicated experts
-                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
-                    </li>
-                    <li class="cs-li cs-disabled">
-                        Consultation with a Senior experts
+                        Early access to new content and resources
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                 </ul>
-                <a href="" class="cs-button-solid cs-price-button">Book Appointment</a>
+                <a href="" class="cs-button-solid cs-price-button">SIGN UP</a>
             </li>
             <li class="cs-item">
                 <div class="cs-top">
-                    <span class="cs-package">Teen</span>
-                    <span class="cs-price">$89</span>
-                    <span class="cs-desc">Per Sesson</span>
+                    <span class="cs-package">RENEWED</span>
+                    <span class="cs-price">$147</span>
+                    <span class="cs-desc">Per Month</span>
                     <picture class="cs-background">
                         <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="topographic" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
                     </picture>
                 </div>
                 <ul class="cs-ul">
                     <li class="cs-li">
-                        All available starter feature
+                        Everything in Equipped
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                     <li class="cs-li">
-                        Medical service 24/7
+                        Monthly 1:1 coaching session with a senior consultant
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                     <li class="cs-li">
-                        Customer agent service
+                        Personalized strategies and resources tailored to your unique needs
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                     <li class="cs-li">
-                        Professional Service
-                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
-                    </li>
-                    <li class="cs-li">
-                        2 dedicated experts
-                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
-                    </li>
-                    <li class="cs-li">
-                        Consultation with a Senior experts
+                        Priority 24 hour response time for support and guidance via direct messaging
                         <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="checkmark" width="18" height="18">
                     </li>
                 </ul>
-                <a href="" class="cs-button-solid cs-price-button">Book Appointment</a>
+                <a href="" class="cs-button-solid cs-price-button">SIGN UP</a>
             </li>
         </ul>
     </div>
@@ -347,5 +367,22 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                                 
                                 
                                 
-
+<!-- place this stitch just before your </body> tag. the absolute position of the popup should keep it to the bottom-right of the screen. -->
+<div id="popup-2064">
+    <div class="cs-container">
+        <button class="cs-close">
+            <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/cookie-close.svg" alt="close" width="16" height="16">
+        </button>
+        <div class="cs-content">
+            <div class="cs-flex">
+                <h3 class="cs-h3">REDEEMED ARROW USES COOKIES</h3>
+                <p class="cs-text">
+                    This website uses cookies. By using our website you consent to all cookies in accordance with our Cookie Policy as established in our Terms & Conditions. <a class="cs-link" href="">Read More</a>
+                </p>
+            </div>
+            <button class="cs-button-solid cs-accept">Accept</button>
+        </div>
+    </div>
+</div>
+                                
 {% endblock %}
