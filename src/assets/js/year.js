@@ -7,7 +7,7 @@ function updateCopyrightYear() {
         return;
     }
 
-    copyrightElement.innerHTML = `&copy; Copyright ${currentYear} <a href="/" class="cs-credit-link">Redeemed Arrow Behavior Consulting</a> | All Rights Reserved <br><i>Designed & developed by <a href="https://www.gatewaycornerstone.com" class="cs-credit-link" target="_blank">Gateway Cornerstone Technologies</a> | All Rights Reserved</i>`;
+    copyrightElement.innerHTML = `&copy; Copyright ${currentYear} <a href="/" class="cs-credit-link">Redeemed Arrow Behavior Consulting</a> | All Rights Reserved <br><i>Designed & developed by <a href="https://www.gatewaycornerstonetech.com" class="cs-credit-link" target="_blank">Gateway Cornerstone Technologies</a> | All Rights Reserved</i>`;
 }
 
 window.addEventListener('load', updateCopyrightYear);

@@ -1,0 +1,187 @@
+/*-- -------------------------- -->
+<---            Terms           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #terms-content {
+        padding: var(--sectionPadding);
+        background-color: #FBF9F5;
+
+        .cs-container {
+            width: 100%;
+            max-width: (800/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-header-block {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 32px - 40px */
+            padding-bottom: clamp(2rem, 5vw, 2.5rem);
+            border-bottom: 1px solid #D2D8DF;
+        }
+
+        .cs-topper {
+            text-align: inherit;
+            margin: 0 auto (4/16rem);
+        }
+
+        .cs-title {
+            text-align: inherit;
+            max-width: 100%;
+            margin: 0 auto (12/16rem);
+        }
+
+        .cs-company {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            font-weight: 700;
+            margin: 0;
+            color: var(--headerColor);
+        }
+
+        .cs-site-link {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-decoration: none;
+            margin: (4/16rem) 0 0;
+            color: var(--primary);
+            display: inline-block;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        .cs-effective-date {
+            font-size: (14/16rem);
+            line-height: 1.5em;
+            margin: (16/16rem) 0 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-highlight {
+            background-color: #FCEE7A;
+            padding: 0 (6/16rem);
+        }
+
+        .cs-article {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* 20px - 24px */
+            gap: clamp(1.25rem, 2.5vw, 1.5rem);
+
+            h2 {
+                font-family: var(--headerFont);
+                /* 22px - 27px */
+                font-size: clamp(1.375rem, 2.6vw, 1.6875rem);
+                font-weight: 900;
+                line-height: 1.3em;
+                margin: (16/16rem) 0 0;
+                color: var(--headerColor);
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            h3 {
+                font-family: var(--headerFont);
+                font-size: (18/16rem);
+                font-weight: 700;
+                line-height: 1.3em;
+                margin: (8/16rem) 0 0;
+                color: var(--headerColor);
+            }
+
+            p {
+                font-size: var(--bodyFontSize);
+                line-height: 1.6em;
+                margin: 0;
+                color: var(--bodyTextColor);
+
+                strong {
+                    color: var(--headerColor);
+                }
+
+                a {
+                    color: var(--primary);
+                    word-break: break-word;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .cs-caps {
+                font-size: (14/16rem);
+                letter-spacing: 0.02em;
+            }
+        }
+
+        .cs-list {
+            width: 100%;
+            margin: 0;
+            padding: 0 0 0 (20/16rem);
+            display: flex;
+            flex-direction: column;
+            gap: (8/16rem);
+
+            li {
+                font-size: var(--bodyFontSize);
+                line-height: 1.6em;
+                color: var(--bodyTextColor);
+            }
+        }
+
+        .cs-list-lettered,
+        .cs-list-numbered {
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .cs-notice {
+            width: 100%;
+            /* 20px - 24px */
+            padding: clamp(1.25rem, 3vw, 1.5rem);
+            box-sizing: border-box;
+            background-color: #fff;
+            border: 1px solid #D2D8DF;
+            border-left: 4px solid var(--secondary);
+            border-radius: (8/16rem);
+            display: flex;
+            flex-direction: column;
+            gap: (12/16rem);
+        }
+
+        .cs-notice-heading {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--headerColor) !important;
+        }
+
+        .cs-contact-block {
+            line-height: 1.6em;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #terms-content {
+        .cs-header-block {
+            /* 40px - 48px */
+            padding-bottom: clamp(2.5rem, 5vw, 3rem);
+        }
+    }
+}
