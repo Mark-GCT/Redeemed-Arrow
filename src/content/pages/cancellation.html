@@ -1,6 +1,5 @@
 ---
-description: "Meta description for the page"
-image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+description: "Read the Cancellation Policy for Redeemed Arrow Behavior Consulting LLC membership plans, including how to cancel and our refund policy."
 eleventyComputed:
   title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
   permalink: "/{{ page.fileSlug | slugify }}/"
@@ -10,23 +9,57 @@ eleventyComputed:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
-
-    <!-- Any page-specific tags that belong in the <head> -->
-
 
 {% endblock %}
 
 {% block body %}
 
-    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+<!-- ============================================ -->
+<!--                 Cancellation                 -->
+<!-- ============================================ -->
 
-    <!-- If you want the page to have a "CTA", remove the {# and #} below -->
-    {# {% include 'sections/cta.html' %} #}
+<section id="cancellation-content">
+    <div class="cs-container">
+        <header class="cs-header-block">
+            <span class="cs-topper">Legal</span>
+            <h1 class="cs-title">Membership Cancellation Policy</h1>
+            <p class="cs-company">Redeemed Arrow Behavior Consulting LLC</p>
+            <a class="cs-site-link" href="https://www.redeemedarrow.com">www.redeemedarrow.com</a>
+            <p class="cs-effective-date">Effective Date: <span class="cs-highlight">[CONFIRM EFFECTIVE DATE]</span></p>
+        </header>
+        <div class="cs-article">
+            <!--
+                TODO (business owner to confirm before publishing): this page is a structural
+                draft only. Every bracketed [ ] value below is a placeholder and must be
+                replaced with your actual, binding policy before this page goes live -
+                these are business/legal decisions, not something to guess at.
+            -->
+            <h2>1. Overview</h2>
+            <p>This Cancellation Policy explains how members of Redeemed Arrow Behavior Consulting LLC ("Company," "we," "us," or "our") may cancel a membership plan (Supported, Equipped, or Renewed), and describes our refund practices. This Policy is incorporated by reference into our <a href="/terms/">Website Terms and Conditions</a>.</p>
+
+            <h2>2. How to Cancel</h2>
+            <p>You may request cancellation of your membership at any time by [CONFIRM CANCELLATION METHOD - e.g. emailing info@redeemedarrow.com, a self-service option inside the Mighty Platform, or another process] at least [CONFIRM NOTICE PERIOD - e.g. 0 / 7 / 30 days] before your next billing date. Cancellations submitted after that point will take effect on your following billing cycle.</p>
+
+            <h2>3. Billing and Refunds</h2>
+            <p>Redeemed Arrow memberships are billed [CONFIRM BILLING CADENCE - e.g. monthly, in advance]. [CONFIRM REFUND POLICY - e.g. "Fees already paid are non-refundable" or "You may request a refund within X days of your initial charge"]. You will continue to have access to your membership tier through the end of the billing period you've already paid for.</p>
+
+            <h2>4. Changing or Downgrading Plans</h2>
+            <p>To move between the Supported, Equipped, and Renewed tiers, contact us at <a href="mailto:{{ client.email }}">{{ client.email }}</a>. [CONFIRM WHETHER DOWNGRADES/UPGRADES TAKE EFFECT IMMEDIATELY OR AT THE NEXT BILLING CYCLE, AND WHETHER PRORATION APPLIES].</p>
+
+            <h2>5. Missed Live Sessions</h2>
+            <p>Group coaching sessions are recorded and made available as on-demand replays. [CONFIRM POLICY ON MISSED OR RESCHEDULED INDIVIDUAL 1:1 COACHING SESSIONS ON THE RENEWED PLAN].</p>
+
+            <h2>6. Contact Us</h2>
+            <p>If you have questions about this Policy or need help cancelling your membership, please contact us at:</p>
+            <p class="cs-contact-block">
+                Redeemed Arrow Behavior Consulting LLC<br>
+                <a href="mailto:{{ client.email }}">{{ client.email }}</a><br>
+                <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
+            </p>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
-
-
-
-

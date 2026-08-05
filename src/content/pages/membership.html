@@ -1,6 +1,6 @@
 ---
-description: "Meta description for the page"
-image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+description: "Compare Redeemed Arrow's three membership plans for foster and adoptive families: Supported ($47/mo), Equipped ($97/mo), and Renewed ($147/mo). Join our trauma-informed coaching community today."
+image: "/assets/images/family-close.jpg"
 eleventyComputed:
   title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
   permalink: "/{{ page.fileSlug | slugify }}/"
@@ -10,23 +10,323 @@ eleventyComputed:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
 
-    <!-- Any page-specific tags that belong in the <head> -->
-
+    <!-- Structured data: helps search engines and AI assistants answer "what does membership cost / include" style questions directly (SEO/AEO/GEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "name": "Redeemed Arrow Membership",
+                "serviceType": "Behavioral coaching membership",
+                "description": "{{ description | safe }}",
+                "url": "{{ client.domain }}{{ page.url }}",
+                "areaServed": "US",
+                "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Foster, adoptive, and kinship parents"
+                },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "name": "{{ client.name }}",
+                    "telephone": "{{ client.phoneFormatted }}",
+                    "email": "{{ client.email }}",
+                    "url": "{{ client.domain }}",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "{{ client.address.city }}",
+                        "addressRegion": "{{ client.address.state }}",
+                        "postalCode": "{{ client.address.zip }}",
+                        "addressCountry": "{{ client.address.country }}"
+                    }
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Membership Plans",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "name": "Supported",
+                            "priceCurrency": "USD",
+                            "price": "47",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": "47",
+                                "priceCurrency": "USD",
+                                "unitText": "MONTH"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Equipped",
+                            "priceCurrency": "USD",
+                            "price": "97",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": "97",
+                                "priceCurrency": "USD",
+                                "unitText": "MONTH"
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "Renewed",
+                            "priceCurrency": "USD",
+                            "price": "147",
+                            "priceSpecification": {
+                                "@type": "UnitPriceSpecification",
+                                "price": "147",
+                                "priceCurrency": "USD",
+                                "unitText": "MONTH"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What membership plans does Redeemed Arrow offer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Redeemed Arrow offers three membership tiers: Supported ($47/month), Equipped ($97/month), and Renewed ($147/month). Each tier builds on the one before it, adding live coaching and more personalized support."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What's included in every plan?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Every plan, starting with Supported, includes full access to The Vault training library, the resource library, community support on Circle, on-demand replays of live sessions, and a new member cohort training session."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What does the Equipped plan add?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Equipped includes everything in Supported, plus live group coaching sessions twice a month, access to an Ask-Me-Anything thread, and early access to new content and resources."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What does the Renewed plan add?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Renewed includes everything in Equipped, plus one private 1:1 coaching session per month with a senior consultant, a personalized behavior plan, and priority 24-hour response time for direct-message support."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I switch plans later?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. You can upgrade to a higher tier as your family's needs change. Contact our team for help moving between plans."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I sign up?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Choose the plan that fits your family below to join through our community platform, or contact us first if you have questions about which tier is right for you."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
 {% endblock %}
 
 {% block body %}
 
-    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+    <!-- ============================================ -->
+    <!--          Side By Side (Intro / Hero)         -->
+    <!-- ============================================ -->
 
-    <!-- If you want the page to have a "CTA", remove the {# and #} below -->
-    {# {% include 'sections/cta.html' %} #}
+    <section id="sbsr-950">
+        <div class="cs-container">
+            <div class="cs-image-group">
+                <picture class="cs-picture cs-picture1">
+                    <source media="(max-width: 600px)" srcset="/assets/images/family-close.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/family-close.jpg">
+                    <img loading="eager" decoding="async" src="/assets/images/family-close.jpg" alt="A foster or adoptive family embracing together." width="349" height="590">
+                </picture>
+                <picture class="cs-picture cs-picture2">
+                    <source media="(max-width: 600px)" srcset="/assets/images/family-party.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/family-party.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/family-party.jpg" alt="A family celebrating together." width="281" height="387">
+                </picture>
+                <picture class="cs-picture cs-picture3">
+                    <source media="(max-width: 600px)" srcset="/assets/images/mom-child.jpg">
+                    <source media="(min-width: 601px)" srcset="/assets/images/mom-child.jpg">
+                    <img loading="lazy" decoding="async" src="/assets/images/mom-child.jpg" alt="A mother and young child holding hands." width="281" height="280">
+                </picture>
+            </div>
+            <div class="cs-content">
+                <span class="cs-topper">Membership Plans</span>
+                <h1 class="cs-title">Find the Right Level of Support for Your Family</h1>
+                <p class="cs-text">
+                    Every Redeemed Arrow membership includes The Vault's on-demand training library, our resource library, and full community support. As you move up in tier, you add live group coaching and then private, one-on-one coaching with a senior consultant. Compare the three plans below and join the one that fits where your family is right now.
+                </p>
+                <a href="/contact/" class="cs-button-solid" aria-label="have questions about membership, contact us">HAVE QUESTIONS? CONTACT US</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                   Pricing                    -->
+    <!-- ============================================ -->
+
+    <section id="pricing-861">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">OUR MEMBERSHIP TIERS</span>
+                <h2 class="cs-title">THREE MEMBERSHIP LEVELS</h2>
+                <p class="cs-text">
+                    We offer three membership tiers to meet every family where they are. Each tier is designed to provide the right level of support and resources to help you achieve your goals. Choose the membership that best fits your needs and start your journey towards a brighter future today.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-top">
+                        <span class="cs-package">SUPPORTED</span>
+                        <span class="cs-price">$47</span>
+                        <span class="cs-desc">Per Month</span>
+                        <picture class="cs-background">
+                            <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                        </picture>
+                    </div>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            Full training vault access
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            Resource library access
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            Community support access
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            On-demand re-plays of all live sessions
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            New member cohort training session
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                    </ul>
+                    <a href="{{ client.socials.mighty }}" class="cs-button-solid cs-price-button" aria-label="sign up for the supported plan">SIGN UP</a>
+                </li>
+                <li class="cs-item cs-popular">
+                    <div class="cs-top">
+                        <span class="cs-package">EQUIPPED</span>
+                        <span class="cs-price">$97</span>
+                        <span class="cs-desc">Per Month</span>
+                        <picture class="cs-background">
+                            <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                        </picture>
+                    </div>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            Everything in Supported
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            Live group coaching sessions 2x per month
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            Access to Ask-Me-Anything thread
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            Early access to new content and resources
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                    </ul>
+                    <a href="{{ client.socials.mighty }}" class="cs-button-solid cs-price-button" aria-label="sign up for the equipped plan">SIGN UP</a>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-top">
+                        <span class="cs-package">RENEWED</span>
+                        <span class="cs-price">$147</span>
+                        <span class="cs-desc">Per Month</span>
+                        <picture class="cs-background">
+                            <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
+                        </picture>
+                    </div>
+                    <ul class="cs-ul">
+                        <li class="cs-li">
+                            Everything in Equipped
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            Monthly 1:1 coaching session with a senior consultant
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            Personalized strategies and resources tailored to your unique needs
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                        <li class="cs-li">
+                            Priority 24 hour response time for support and guidance via direct messaging
+                            <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Forange-check.svg" alt="" width="18" height="18">
+                        </li>
+                    </ul>
+                    <a href="{{ client.socials.mighty }}" class="cs-button-solid cs-price-button" aria-label="sign up for the renewed plan">SIGN UP</a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--             FAQ (Plain Accordion)            -->
+    <!-- ============================================ -->
+
+    <section id="membership-faq">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Common Questions</span>
+                <h2 class="cs-title">Membership FAQ</h2>
+            </div>
+            <div class="cs-faq-group">
+                <details open>
+                    <summary>What membership plans does Redeemed Arrow offer?</summary>
+                    <p>Redeemed Arrow offers three membership tiers: Supported ($47/month), Equipped ($97/month), and Renewed ($147/month). Each tier builds on the one before it, adding live coaching and more personalized support.</p>
+                </details>
+                <details>
+                    <summary>What's included in every plan?</summary>
+                    <p>Every plan, starting with Supported, includes full access to <a href="/behavior-training/">The Vault training library</a>, the resource library, <a href="/community-membership/">community support on Circle</a>, on-demand replays of live sessions, and a new member cohort training session.</p>
+                </details>
+                <details>
+                    <summary>What does the Equipped plan add?</summary>
+                    <p>Equipped includes everything in Supported, plus <a href="/group-coaching/">live group coaching sessions</a> twice a month, access to an Ask-Me-Anything thread, and early access to new content and resources.</p>
+                </details>
+                <details>
+                    <summary>What does the Renewed plan add?</summary>
+                    <p>Renewed includes everything in Equipped, plus one <a href="/parent-coaching/">private 1:1 coaching session</a> per month with a senior consultant, a personalized behavior plan, and priority 24-hour response time for direct-message support.</p>
+                </details>
+                <details>
+                    <summary>Can I switch plans later?</summary>
+                    <p>Yes. You can upgrade to a higher tier as your family's needs change. <a href="/contact/">Contact our team</a> for help moving between plans.</p>
+                </details>
+                <details>
+                    <summary>How do I sign up?</summary>
+                    <p>Choose the plan that fits your family above to join through our community platform, or <a href="/contact/">contact us</a> first if you have questions about which tier is right for you.</p>
+                </details>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
-
-
-
-
