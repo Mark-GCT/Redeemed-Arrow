@@ -1,8 +1,8 @@
 ---
-description: "Meta description for the page"
-image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+description: "One-on-one, trauma-informed parent coaching with a BCBA-led consultant — included in Redeemed Arrow's Renewed membership plan for foster & adoptive families."
+image: "/assets/images/mom-child.jpg"
 eleventyComputed:
-  title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
+  title: "Individual Parent Coaching | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
   permalink: "/{{ page.fileSlug | slugify }}/"
 ---
 
@@ -10,23 +10,288 @@ eleventyComputed:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
 
-    <!-- Any page-specific tags that belong in the <head> -->
-
+    <!-- Structured data: helps search engines and AI assistants answer "what is individual parent coaching" style questions directly (SEO/AEO/GEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "name": "Individual Parent Coaching",
+                "serviceType": "Parent coaching",
+                "description": "{{ description | safe }}",
+                "url": "{{ client.domain }}{{ page.url }}",
+                "areaServed": "US",
+                "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Foster, adoptive, and kinship parents"
+                },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "name": "{{ client.name }}",
+                    "telephone": "{{ client.phoneFormatted }}",
+                    "email": "{{ client.email }}",
+                    "url": "{{ client.domain }}",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "{{ client.address.city }}",
+                        "addressRegion": "{{ client.address.state }}",
+                        "postalCode": "{{ client.address.zip }}",
+                        "addressCountry": "{{ client.address.country }}"
+                    }
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "name": "Renewed Membership Plan",
+                    "url": "{{ client.domain }}/membership/",
+                    "priceCurrency": "USD",
+                    "price": "147",
+                    "priceSpecification": {
+                        "@type": "UnitPriceSpecification",
+                        "price": "147",
+                        "priceCurrency": "USD",
+                        "unitText": "MONTH"
+                    }
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is individual parent coaching?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Individual parent coaching is a private, one-on-one session with a senior behavior consultant who helps you apply trauma-informed, ABA-based strategies to your child's specific behaviors, in your own home, at your own pace."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Who is individual parent coaching for?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It's designed for foster, adoptive, and kinship parents who want dedicated, personalized support beyond group calls, especially families navigating trauma, attachment challenges, or behaviors that need focused, one-on-one attention."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I get access to individual coaching sessions?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Individual coaching is included in the Renewed membership plan. Once you join at redeemedarrow.com/membership, your monthly one-on-one session is scheduled directly with your consultant."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How is individual coaching different from group coaching?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Group coaching sessions are shared calls where members work through common topics together. Individual coaching is a private session focused entirely on your family, your child, and your specific goals."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What can we talk about during a coaching session?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Anything tied to your child's behavior and your family's dynamics, including de-escalation strategies, daily routines, trauma responses, attachment repair, school or caseworker challenges, and progress on your personalized behavior plan."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How often are individual coaching sessions?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Renewed members receive one private coaching session per month, along with priority 24-hour response time for direct-message support between sessions."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
 {% endblock %}
 
 {% block body %}
 
-    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+    <!-- ============================================ -->
+    <!--          Side By Side (Intro / Hero)         -->
+    <!-- ============================================ -->
 
-    <!-- If you want the page to have a "CTA", remove the {# and #} below -->
-    {# {% include 'sections/cta.html' %} #}
+    <section id="pc-hero">
+        <div class="cs-container">
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/mom-child.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/mom-child.jpg">
+                <img loading="eager" decoding="async" src="/assets/images/mom-child.jpg" alt="A mother and young child holding hands, representing the trust built through individual parent coaching." width="1920" height="1280">
+                <!--Image by <a href="https://pixabay.com/users/sasint-3639875/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1807500">sasint</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=1807500">Pixabay</a>-->
+            </picture>
+            <div class="cs-content">
+                <span class="cs-topper">Individual Parent Coaching</span>
+                <h1 class="cs-title">Private, One-on-One Coaching for Foster &amp; Adoptive Parents</h1>
+                <p class="cs-text">
+                    <strong>Individual parent coaching</strong> is private, one-on-one guidance from a Board Certified Behavior Analyst (BCBA) or senior consultant, built entirely around your child's history and your family's goals.
+                </p>
+                <p class="cs-text">
+                    Every foster and adoptive family carries a different story. Individual coaching gives you a dedicated space, separate from group calls and community threads, to work through the behaviors, routines, and relationship repair that are unique to your home.
+                </p>
+                <a href="/membership/" class="cs-button-solid" aria-label="see membership plans">SEE MEMBERSHIP PLANS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Who, What & Why                -->
+    <!-- ============================================ -->
+
+    <section id="pc-www">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Who, What &amp; Why</span>
+                <h2 class="cs-title">Is Individual Coaching Right for Your Family?</h2>
+                <p class="cs-text">
+                    Parent coaching means different things to different families. Here's exactly who our individual sessions are for, what happens in them, and why families choose this level of support.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy1.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">Who It's For</h3>
+                    <p class="cs-item-text">
+                        Foster, adoptive, and kinship parents raising children with trauma histories, attachment challenges, or behaviors that group coaching and on-demand training haven't fully resolved.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy2.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">What It Includes</h3>
+                    <p class="cs-item-text">
+                        A private monthly session with a senior, trauma-informed consultant, plus a personalized behavior plan and priority messaging support between sessions.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy3.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">Why It Matters</h3>
+                    <p class="cs-item-text">
+                        Consistent, individualized support builds parent confidence, shortens the trial-and-error period, and helps your whole family heal at a pace that fits your child.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--        Side By Side Reverse (The Offer)      -->
+    <!-- ============================================ -->
+
+    <section id="pc-offer">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Part of Your Membership</span>
+                <h2 class="cs-title">Individual Coaching Is Built Into the Renewed Plan</h2>
+                <p class="cs-text">
+                    Individual parent coaching isn't a separate purchase. It's included the moment you join the <strong>Renewed</strong> tier of the Redeemed Arrow membership, on top of everything already included in our Supported and Equipped plans.
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        One private 1:1 coaching session every month with a senior, BCBA-trained consultant
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        A personalized, trauma-informed behavior plan built around your child and your home
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Priority 24-hour response time for guidance and support via direct message
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Full access to the training vault, resource library, and community support included in every plan
+                    </li>
+                </ul>
+                <a href="/membership/" class="cs-link">JOIN THE RENEWED PLAN</a>
+            </div>
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/family-close.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/family-close.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/family-close.jpg" alt="A foster or adoptive family embracing together outdoors, reflecting the connection individual parent coaching helps build." width="1920" height="1280">
+                <!--Image by <a href="https://pixabay.com/users/alisadyson-25286447/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7257182">AlisaDyson</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7257182">Pixabay</a>-->
+            </picture>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--             FAQ (Accordion)                  -->
+    <!-- ============================================ -->
+
+    <section id="pc-faq">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Common Questions</span>
+                <h2 class="cs-title">Individual Parent Coaching FAQ</h2>
+            </div>
+            <div class="cs-faq-group">
+                <details class="cs-details" open>
+                    <summary class="cs-summary">What is individual parent coaching?</summary>
+                    <p class="cs-faq-text">
+                        Individual parent coaching is a private, one-on-one session with a senior behavior consultant who helps you apply trauma-informed, ABA-based strategies to your child's specific behaviors, in your own home, at your own pace.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">Who is individual parent coaching for?</summary>
+                    <p class="cs-faq-text">
+                        It's designed for foster, adoptive, and kinship parents who want dedicated, personalized support beyond group calls, especially families navigating trauma, attachment challenges, or behaviors that need focused, one-on-one attention.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How do I get access to individual coaching sessions?</summary>
+                    <p class="cs-faq-text">
+                        Individual coaching is included in the Renewed membership plan. Once you <a href="/membership/">join the membership</a>, your monthly one-on-one session is scheduled directly with your consultant.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How is individual coaching different from group coaching?</summary>
+                    <p class="cs-faq-text">
+                        <a href="/group-coaching/">Group coaching</a> sessions are shared calls where members work through common topics together. Individual coaching is a private session focused entirely on your family, your child, and your specific goals.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">What can we talk about during a coaching session?</summary>
+                    <p class="cs-faq-text">
+                        Anything tied to your child's behavior and your family's dynamics, including de-escalation strategies, daily routines, trauma responses, attachment repair, school or caseworker challenges, and progress on your personalized behavior plan.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How often are individual coaching sessions?</summary>
+                    <p class="cs-faq-text">
+                        Renewed members receive one private coaching session per month, along with priority 24-hour response time for direct-message support between sessions.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    CTA                       -->
+    <!-- ============================================ -->
+
+    <section id="pc-cta">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Ready for Personalized, One-on-One Support?</h2>
+                <p class="cs-text">
+                    Join the Renewed membership plan and get matched with a senior consultant for monthly private coaching built around your family.
+                </p>
+                <div class="cs-button-group">
+                    <a href="/membership/" class="cs-button-solid" aria-label="join the membership">JOIN THE MEMBERSHIP</a>
+                    <a href="/contact/" class="cs-button-transparent" aria-label="have questions, contact us">HAVE QUESTIONS? CONTACT US</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
-
-
-
-

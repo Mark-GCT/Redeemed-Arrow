@@ -1,8 +1,8 @@
 ---
-description: "Meta description for the page"
-image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+description: "The Vault is Redeemed Arrow's on-demand video library — ~15-minute lessons on trauma-informed care and ABA basics, included in every membership plan."
+image: "https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png"
 eleventyComputed:
-  title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
+  title: "The Vault: On-Demand Behavioral Training | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
   permalink: "/{{ page.fileSlug | slugify }}/"
 ---
 
@@ -10,23 +10,283 @@ eleventyComputed:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
 
-    <!-- Any page-specific tags that belong in the <head> -->
-
+    <!-- Structured data: helps search engines and AI assistants answer "what is The Vault" style questions directly (SEO/AEO/GEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "name": "On-Demand Behavioral Training (The Vault)",
+                "serviceType": "On-demand video training library",
+                "description": "{{ description | safe }}",
+                "url": "{{ client.domain }}{{ page.url }}",
+                "areaServed": "US",
+                "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Foster, adoptive, and kinship parents"
+                },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "name": "{{ client.name }}",
+                    "telephone": "{{ client.phoneFormatted }}",
+                    "email": "{{ client.email }}",
+                    "url": "{{ client.domain }}",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "{{ client.address.city }}",
+                        "addressRegion": "{{ client.address.state }}",
+                        "postalCode": "{{ client.address.zip }}",
+                        "addressCountry": "{{ client.address.country }}"
+                    }
+                },
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "name": "All Membership Plans",
+                    "url": "{{ client.domain }}/membership/",
+                    "priceCurrency": "USD",
+                    "lowPrice": "47",
+                    "highPrice": "147",
+                    "offerCount": "3"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is The Vault?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The Vault is Redeemed Arrow's on-demand video library. Each video runs about 15 minutes and walks you through a specific trauma-informed care, ABA, or behavioral education topic you can apply right away."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Who is on-demand behavioral training for?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It's designed for foster, adoptive, and kinship parents who want to learn trauma-informed strategies and basic behavioral principles at their own pace, without waiting for a scheduled call."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How long are the training videos?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Most Vault videos run about 15 minutes, short enough to watch during a nap, a lunch break, or a few quiet minutes after bedtime."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What topics does The Vault cover?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The Vault covers trauma-informed care, basic Applied Behavior Analysis (ABA) principles, and everyday behavioral education topics foster and adoptive families deal with."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is The Vault included in every membership plan?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Full Vault access is included starting with the Supported plan and carries through the Equipped and Renewed plans, with early access to new videos on Equipped and Renewed."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I access The Vault?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Once you join any Redeemed Arrow plan, The Vault is available in your member area. Watch any video anytime and revisit it as often as you'd like."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
 {% endblock %}
 
 {% block body %}
 
-    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+    <!-- ============================================ -->
+    <!--          Side By Side (Intro / Hero)         -->
+    <!-- ============================================ -->
 
-    <!-- If you want the page to have a "CTA", remove the {# and #} below -->
-    {# {% include 'sections/cta.html' %} #}
+    <section id="bt-hero">
+        <div class="cs-container">
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png">
+                <img loading="eager" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/therapist1.png" alt="A trauma-informed behavior consultant, representing the expert-led lessons inside The Vault." width="565" height="814">
+            </picture>
+            <div class="cs-content">
+                <span class="cs-topper">On-Demand Behavioral Training</span>
+                <h1 class="cs-title">The Vault: Video Training for Foster &amp; Adoptive Parents</h1>
+                <p class="cs-text">
+                    <strong>On-demand behavioral training</strong> is a growing library of short video lessons, called <strong>The Vault</strong>, that walk you through trauma-informed care, basic ABA principles, and everyday behavioral education at your own pace.
+                </p>
+                <p class="cs-text">
+                    Every video runs about 15 minutes, short enough to fit into nap time, a lunch break, or a few quiet minutes after bedtime. Watch what's relevant right now, rewatch it before a hard week, and work through the full library whenever you're ready.
+                </p>
+                <a href="/membership/" class="cs-button-solid" aria-label="see membership plans">SEE MEMBERSHIP PLANS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Who, What & Why                -->
+    <!-- ============================================ -->
+
+    <section id="bt-www">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Who, What &amp; Why</span>
+                <h2 class="cs-title">Is On-Demand Training Right for Your Family?</h2>
+                <p class="cs-text">
+                    The Vault is the self-paced foundation every Redeemed Arrow plan is built on. Here's exactly who it's for, what's inside it, and why it matters alongside coaching and community.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy1.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">Who It's For</h3>
+                    <p class="cs-item-text">
+                        Foster, adoptive, and kinship parents who want to learn trauma-informed strategies on their own schedule, whether you're brand new to this or want a refresher before a tough season.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy2.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">What It Includes</h3>
+                    <p class="cs-item-text">
+                        Full access to The Vault, our growing library of ~15-minute videos covering trauma-informed care, basic ABA principles, and behavioral education you can watch and rewatch any time.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy3.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">Why It Matters</h3>
+                    <p class="cs-item-text">
+                        You shouldn't need a coaching call just to learn the basics. The Vault builds your foundation first, so every group and individual coaching session goes further, faster.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--        Side By Side Reverse (The Offer)      -->
+    <!-- ============================================ -->
+
+    <section id="bt-offer">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Part of Every Plan</span>
+                <h2 class="cs-title">The Vault Is Included in Every Membership Plan</h2>
+                <p class="cs-text">
+                    The Vault isn't a separate purchase. Full access is included starting with the <strong>Supported</strong> plan, and it stays included as you move up to Equipped or Renewed.
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Full library access: ~15-minute videos on trauma-informed care, ABA basics, and behavioral education
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        New training added regularly, with early access to new content on the Equipped and Renewed plans
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Watch on your own schedule, then revisit any video whenever you need a refresher
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Pairs with the community and coaching calls included in every plan
+                    </li>
+                </ul>
+                <a href="/membership/" class="cs-link">SEE MEMBERSHIP PLANS &amp; PRICING</a>
+            </div>
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/family-party.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/family-party.jpg">
+                <img loading="lazy" decoding="async" src="/assets/images/family-party.jpg" alt="A family spending time together, reflecting the confidence built by working through The Vault's training library." width="1920" height="1423">
+                <!--Image by <a href="https://pixabay.com/users/davm2598-10060465/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5134828">DAVM2598</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5134828">Pixabay</a>-->
+            </picture>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--             FAQ (Accordion)                  -->
+    <!-- ============================================ -->
+
+    <section id="bt-faq">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Common Questions</span>
+                <h2 class="cs-title">On-Demand Behavioral Training FAQ</h2>
+            </div>
+            <div class="cs-faq-group">
+                <details class="cs-details" open>
+                    <summary class="cs-summary">What is The Vault?</summary>
+                    <p class="cs-faq-text">
+                        The Vault is Redeemed Arrow's on-demand video library. Each video runs about 15 minutes and walks you through a specific trauma-informed care, ABA, or behavioral education topic you can apply right away.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">Who is on-demand behavioral training for?</summary>
+                    <p class="cs-faq-text">
+                        It's designed for foster, adoptive, and kinship parents who want to learn trauma-informed strategies and basic behavioral principles at their own pace, without waiting for a scheduled call.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How long are the training videos?</summary>
+                    <p class="cs-faq-text">
+                        Most Vault videos run about 15 minutes, short enough to watch during a nap, a lunch break, or a few quiet minutes after bedtime.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">What topics does The Vault cover?</summary>
+                    <p class="cs-faq-text">
+                        The Vault covers trauma-informed care, basic Applied Behavior Analysis (ABA) principles, and everyday behavioral education topics foster and adoptive families deal with.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">Is The Vault included in every membership plan?</summary>
+                    <p class="cs-faq-text">
+                        Yes. Full Vault access is included starting with the Supported plan and carries through the Equipped and Renewed plans, with early access to new videos on Equipped and Renewed. <a href="/membership/">See membership plans</a>.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How do I access The Vault?</summary>
+                    <p class="cs-faq-text">
+                        Once you join any Redeemed Arrow plan, The Vault is available in your member area. Watch any video anytime and revisit it as often as you'd like.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    CTA                       -->
+    <!-- ============================================ -->
+
+    <section id="bt-cta">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Ready to Start Learning at Your Own Pace?</h2>
+                <p class="cs-text">
+                    The Vault comes with every Redeemed Arrow plan. Join today and start working through trauma-informed, ABA-based video training whenever it fits your day.
+                </p>
+                <div class="cs-button-group">
+                    <a href="/membership/" class="cs-button-solid" aria-label="join a membership plan">JOIN A MEMBERSHIP PLAN</a>
+                    <a href="/contact/" class="cs-button-transparent" aria-label="have questions, contact us">HAVE QUESTIONS? CONTACT US</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
-
-
-
-

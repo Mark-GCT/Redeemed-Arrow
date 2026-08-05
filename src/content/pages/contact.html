@@ -1,5 +1,5 @@
 ---
-description: "Meta description for the page"
+description: "Contact Redeemed Arrow Behavior Consulting in Swansea, IL with questions about membership plans, individual or group parent coaching, or getting started."
 image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
 eleventyComputed:
   title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
@@ -10,23 +10,92 @@ eleventyComputed:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
-
-    <!-- Any page-specific tags that belong in the <head> -->
-
 
 {% endblock %}
 
 {% block body %}
 
-    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+    <!-- ============================================ -->
+    <!--                   Contact                    -->
+    <!-- ============================================ -->
 
-    <!-- If you want the page to have a "CTA", remove the {# and #} below -->
-    {# {% include 'sections/cta.html' %} #}
+    <section id="contact-main">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Contact Us</span>
+                <h1 class="cs-title">Get in Touch With Redeemed Arrow</h1>
+                <p class="cs-text">
+                    Have a question about membership, coaching, or getting started? Send us a message below and our team will get back to you.
+                </p>
+            </div>
+            <div class="cs-flex">
+                <div class="cs-info-card">
+                    <h2 class="cs-h3">Contact Information</h2>
+                    <a href="tel:{{ client.phoneForTel }}" class="cs-link-item">
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/phone-w.svg" alt="" width="24" height="24" loading="lazy" decoding="async" aria-hidden="true">
+                        {{ client.phoneFormatted }}
+                    </a>
+                    <a href="mailto:{{ client.email }}" class="cs-link-item">
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/mail-w.svg" alt="" width="24" height="24" loading="lazy" decoding="async" aria-hidden="true">
+                        {{ client.email }}
+                    </a>
+                    <a href="{{ client.address.mapLink }}" class="cs-link-item">
+                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/pin-w.svg" alt="" width="24" height="24" loading="lazy" decoding="async" aria-hidden="true">
+                        {{ client.address.city }}, {{ client.address.state }} {{ client.address.zip }}
+                    </a>
+                    <div class="cs-social">
+                        <a href="{{ client.socials.facebook }}" class="cs-social-link" aria-label="visit facebook">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/face-w.svg" alt="" width="12" height="12" loading="lazy" decoding="async" aria-hidden="true">
+                        </a>
+                        <a href="{{ client.socials.mighty }}" class="cs-social-link" aria-label="visit our community">
+                            <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/x-w.svg" alt="" width="12" height="12" loading="lazy" decoding="async" aria-hidden="true">
+                        </a>
+                    </div>
+                </div>
+                <!-- Netlify Forms: data-netlify + the hidden form-name field are what let Netlify capture submissions with no backend code -->
+                <form id="cs-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="cs-form">
+                    <input type="hidden" name="form-name" value="contact">
+                    <p class="cs-hidden-field" aria-hidden="true">
+                        <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                    </p>
+                    <label class="cs-label" for="name">
+                        Full Name<span class="cs-required" aria-hidden="true">*</span>
+                        <input class="cs-input" type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" required>
+                    </label>
+                    <label class="cs-label" for="email">
+                        Email Address<span class="cs-required" aria-hidden="true">*</span>
+                        <input class="cs-input" type="email" id="email" name="email" placeholder="jane@email.com" autocomplete="email" required>
+                    </label>
+                    <label class="cs-label" for="phone">
+                        Phone Number
+                        <input class="cs-input" type="tel" id="phone" name="phone" placeholder="(555) 555-5555" autocomplete="tel">
+                    </label>
+                    <label class="cs-label" for="reason">
+                        I'm Interested In
+                        <select class="cs-input cs-select" id="reason" name="reason">
+                            <option value="">Select an option</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Membership Plans">Membership Plans</option>
+                            <option value="Individual Parent Coaching">Individual Parent Coaching</option>
+                            <option value="Group Coaching">Group Coaching</option>
+                            <option value="Community Membership">Community Membership</option>
+                            <option value="On-Demand Behavioral Training">On-Demand Behavioral Training (The Vault)</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </label>
+                    <label class="cs-label" for="message">
+                        Message<span class="cs-required" aria-hidden="true">*</span>
+                        <textarea class="cs-input cs-textarea" id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+                    </label>
+                    <p class="cs-disclaimer">
+                        By submitting this form, you agree to our <a href="/privacy/">Privacy Policy</a> and consent to be contacted by {{ client.name }}.
+                    </p>
+                    <button class="cs-button-solid" type="submit">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
-
-
-
-

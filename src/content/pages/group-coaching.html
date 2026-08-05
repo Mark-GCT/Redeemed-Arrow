@@ -1,8 +1,8 @@
 ---
-description: "Meta description for the page"
-image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+description: "Live, biweekly group coaching calls with a trauma-informed consultant — included in Redeemed Arrow's Equipped membership plan for foster & adoptive parents."
+image: "/assets/images/family-party.jpg"
 eleventyComputed:
-  title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
+  title: "Group Coaching | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
   permalink: "/{{ page.fileSlug | slugify }}/"
 ---
 
@@ -10,23 +10,287 @@ eleventyComputed:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
 
-    <!-- Any page-specific tags that belong in the <head> -->
-
+    <!-- Structured data: helps search engines and AI assistants answer "what is group coaching" style questions directly (SEO/AEO/GEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "name": "Group Parent Coaching",
+                "serviceType": "Parent coaching",
+                "description": "{{ description | safe }}",
+                "url": "{{ client.domain }}{{ page.url }}",
+                "areaServed": "US",
+                "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Foster, adoptive, and kinship parents"
+                },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "name": "{{ client.name }}",
+                    "telephone": "{{ client.phoneFormatted }}",
+                    "email": "{{ client.email }}",
+                    "url": "{{ client.domain }}",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "{{ client.address.city }}",
+                        "addressRegion": "{{ client.address.state }}",
+                        "postalCode": "{{ client.address.zip }}",
+                        "addressCountry": "{{ client.address.country }}"
+                    }
+                },
+                "offers": {
+                    "@type": "Offer",
+                    "name": "Equipped Membership Plan",
+                    "url": "{{ client.domain }}/membership/",
+                    "priceCurrency": "USD",
+                    "price": "97",
+                    "priceSpecification": {
+                        "@type": "UnitPriceSpecification",
+                        "price": "97",
+                        "priceCurrency": "USD",
+                        "unitText": "MONTH"
+                    }
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is group coaching?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Group coaching is a live, video-based session where foster, adoptive, and kinship parents meet twice a month with a trauma-informed consultant to talk through real parenting challenges together."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Who is group coaching for?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It's designed for parents who want consistent, real-time coaching and peer support, especially those who learn well by hearing how other families handle similar trauma and behavior challenges."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I join a group coaching session?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Group coaching is included in the Equipped membership plan. Once you join at redeemedarrow.com/membership, you'll get the schedule and login link for every live session."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How is group coaching different from individual coaching?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Group coaching sessions are shared calls where several members work through common topics together. Individual coaching, included in the Renewed plan, is a private session focused entirely on your family."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What if I can't make a live session?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Every group coaching session is recorded. If you miss a live call, you can watch the on-demand replay and still post follow-up questions in the Ask-Me-Anything thread."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How often are group coaching sessions?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Equipped members get two live group coaching sessions every month, plus ongoing access to the Ask-Me-Anything thread between calls."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
 {% endblock %}
 
 {% block body %}
 
-    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+    <!-- ============================================ -->
+    <!--          Side By Side (Intro / Hero)         -->
+    <!-- ============================================ -->
 
-    <!-- If you want the page to have a "CTA", remove the {# and #} below -->
-    {# {% include 'sections/cta.html' %} #}
+    <section id="gc-hero">
+        <div class="cs-container">
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/family-party.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/family-party.jpg">
+                <img loading="eager" decoding="async" src="/assets/images/family-party.jpg" alt="A family celebrating together, representing the shared support families find in group coaching." width="1920" height="1423">
+                <!--Image by <a href="https://pixabay.com/users/davm2598-10060465/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5134828">DAVM2598</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=5134828">Pixabay</a>-->
+            </picture>
+            <div class="cs-content">
+                <span class="cs-topper">Group Coaching</span>
+                <h1 class="cs-title">Live Group Coaching for Foster &amp; Adoptive Parents</h1>
+                <p class="cs-text">
+                    <strong>Group coaching</strong> is a live, video-based session where foster, adoptive, and kinship parents meet twice a month with a trauma-informed consultant to work through shared parenting challenges together.
+                </p>
+                <p class="cs-text">
+                    You don't have to figure out trauma-informed parenting alone. Group coaching gives you a consistent, recurring space to ask questions in real time, hear how other families handle similar behaviors, and walk away with strategies you can use that same week.
+                </p>
+                <a href="/membership/" class="cs-button-solid" aria-label="see membership plans">SEE MEMBERSHIP PLANS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Who, What & Why                -->
+    <!-- ============================================ -->
+
+    <section id="gc-www">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Who, What &amp; Why</span>
+                <h2 class="cs-title">Is Group Coaching Right for Your Family?</h2>
+                <p class="cs-text">
+                    Group coaching gives you a recurring, real-time space to learn alongside other families. Here's exactly who it's for, what happens on a call, and why parents keep coming back.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy1.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">Who It's For</h3>
+                    <p class="cs-item-text">
+                        Foster, adoptive, and kinship parents who want real-time coaching and peer support, especially families who learn well by hearing how others handle similar trauma and behavior challenges.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy2.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">What It Includes</h3>
+                    <p class="cs-item-text">
+                        Two live video sessions each month led by a senior consultant, an ongoing Ask-Me-Anything thread for questions between calls, and on-demand replays if you can't make it live.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy3.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">Why It Matters</h3>
+                    <p class="cs-item-text">
+                        You're not the only parent working through this. Group coaching normalizes the struggle, multiplies the strategies available to you, and keeps you accountable to consistent, trauma-informed routines.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--        Side By Side Reverse (The Offer)      -->
+    <!-- ============================================ -->
+
+    <section id="gc-offer">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Part of Your Membership</span>
+                <h2 class="cs-title">Group Coaching Is Built Into the Equipped Plan</h2>
+                <p class="cs-text">
+                    Group coaching isn't a separate purchase. It's included the moment you join the <strong>Equipped</strong> tier of the Redeemed Arrow membership, on top of everything already included in the Supported plan.
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Live group coaching sessions twice a month with a senior consultant
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Access to an Ask-Me-Anything thread for questions between sessions
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        On-demand replays of every live session you miss
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Full training vault, resource library, and community support access included in every plan
+                    </li>
+                </ul>
+                <a href="/membership/" class="cs-link">JOIN THE EQUIPPED PLAN</a>
+            </div>
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people3.jpg">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people3.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people3.jpg" alt="Two parents talking together, reflecting the peer conversation and support found in group coaching sessions." width="528" height="378">
+            </picture>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--             FAQ (Accordion)                  -->
+    <!-- ============================================ -->
+
+    <section id="gc-faq">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Common Questions</span>
+                <h2 class="cs-title">Group Coaching FAQ</h2>
+            </div>
+            <div class="cs-faq-group">
+                <details class="cs-details" open>
+                    <summary class="cs-summary">What is group coaching?</summary>
+                    <p class="cs-faq-text">
+                        Group coaching is a live, video-based session where foster, adoptive, and kinship parents meet twice a month with a trauma-informed consultant to talk through real parenting challenges together.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">Who is group coaching for?</summary>
+                    <p class="cs-faq-text">
+                        It's designed for parents who want consistent, real-time coaching and peer support, especially those who learn well by hearing how other families handle similar trauma and behavior challenges.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How do I join a group coaching session?</summary>
+                    <p class="cs-faq-text">
+                        Group coaching is included in the Equipped membership plan. Once you <a href="/membership/">join the membership</a>, you'll get the schedule and login link for every live session.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How is group coaching different from individual coaching?</summary>
+                    <p class="cs-faq-text">
+                        Group coaching sessions are shared calls where several members work through common topics together. <a href="/parent-coaching/">Individual coaching</a>, included in the Renewed plan, is a private session focused entirely on your family.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">What if I can't make a live session?</summary>
+                    <p class="cs-faq-text">
+                        Every group coaching session is recorded. If you miss a live call, you can watch the on-demand replay and still post follow-up questions in the Ask-Me-Anything thread.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How often are group coaching sessions?</summary>
+                    <p class="cs-faq-text">
+                        Equipped members get two live group coaching sessions every month, plus ongoing access to the Ask-Me-Anything thread between calls.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    CTA                       -->
+    <!-- ============================================ -->
+
+    <section id="gc-cta">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Ready to Learn Alongside Other Parents?</h2>
+                <p class="cs-text">
+                    Join the Equipped membership plan and get twice-monthly live group coaching plus year-round Ask-Me-Anything access with a senior consultant.
+                </p>
+                <div class="cs-button-group">
+                    <a href="/membership/" class="cs-button-solid" aria-label="join the membership">JOIN THE MEMBERSHIP</a>
+                    <a href="/contact/" class="cs-button-transparent" aria-label="have questions, contact us">HAVE QUESTIONS? CONTACT US</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
-
-
-
-

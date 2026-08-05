@@ -7,6 +7,8 @@
     #sbsr-2370 {
         padding: var(--sectionPadding);
         padding-bottom: 0;
+        /* extra clearance so content isn't hidden behind the fixed nav */
+        padding-top: clamp(9rem, 15vw, 11rem);
         background-color: #FBF5F1;
         /* clips anything overflowing */
         overflow: hidden;
@@ -214,6 +216,8 @@
 @media only screen and (min-width: 75rem) {
     #sbsr-2370 {
         padding: var(--sectionPadding);
+        /* extra clearance so content isn't hidden behind the fixed nav */
+        padding-top: clamp(9rem, 15vw, 11rem);
         padding-bottom: 0;
 
         .cs-container {

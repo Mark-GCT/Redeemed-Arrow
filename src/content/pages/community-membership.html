@@ -1,8 +1,8 @@
 ---
-description: "Meta description for the page"
-image: "OPTIONAL - If an image path is specified here, it will be used for that page's OG image. Useful for blog posts (implemented as standard with this kit)"
+description: "Community membership is included in every Redeemed Arrow plan — join our private support community on Circle, accessible anytime from our home page."
+image: "/assets/images/family-close.jpg"
 eleventyComputed:
-  title: "{{ page.fileSlug | titleCase }} | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
+  title: "Community Membership | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
   permalink: "/{{ page.fileSlug | slugify }}/"
 ---
 
@@ -10,23 +10,304 @@ eleventyComputed:
 {% extends "layouts/base.html" %}
 
 {% block head %}
-    
+
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
 
-    <!-- Any page-specific tags that belong in the <head> -->
-
+    <!-- Structured data: helps search engines and AI assistants answer "what is community membership" style questions directly (SEO/AEO/GEO) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Service",
+                "name": "Community Membership",
+                "serviceType": "Online peer support community",
+                "description": "{{ description | safe }}",
+                "url": "{{ client.domain }}{{ page.url }}",
+                "areaServed": "US",
+                "audience": {
+                    "@type": "Audience",
+                    "audienceType": "Foster, adoptive, and kinship parents"
+                },
+                "provider": {
+                    "@type": "LocalBusiness",
+                    "name": "{{ client.name }}",
+                    "telephone": "{{ client.phoneFormatted }}",
+                    "email": "{{ client.email }}",
+                    "url": "{{ client.domain }}",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "{{ client.address.city }}",
+                        "addressRegion": "{{ client.address.state }}",
+                        "postalCode": "{{ client.address.zip }}",
+                        "addressCountry": "{{ client.address.country }}"
+                    }
+                },
+                "offers": {
+                    "@type": "AggregateOffer",
+                    "name": "All Membership Plans",
+                    "url": "{{ client.domain }}/membership/",
+                    "priceCurrency": "USD",
+                    "lowPrice": "47",
+                    "highPrice": "147",
+                    "offerCount": "3"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What is community membership?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Community membership is ongoing access to Redeemed Arrow's private online community, where foster, adoptive, and kinship parents connect, ask questions, and support each other outside of scheduled coaching calls."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is community membership included in every plan?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. Community membership is included in all three plans, Supported, Equipped, and Renewed, so every member has it from day one with no upgrade required."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What platform does the Redeemed Arrow community use?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The Redeemed Arrow community lives on Circle, a private community platform used to host our members' discussions and support threads."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How do I access the community?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Once you're a member, you can open the community anytime using the Circle community launcher on our home page at redeemedarrow.com."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How is community membership different from group or individual coaching?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Community membership is an always-on discussion space included with every plan. Group coaching, included in the Equipped plan, and individual coaching, included in the Renewed plan, add live, scheduled sessions with a consultant on top of that community access."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do I need a paid plan to join the community?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, an active Supported, Equipped, or Renewed membership is required. Community access is included the moment you sign up, at any tier."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
 
 {% endblock %}
 
 {% block body %}
 
-    <!-- Page HTML goes here, without a <main> wrapper. The <main> tag is already presented in layouts/base.html -->
+    <!-- ============================================ -->
+    <!--          Side By Side (Intro / Hero)         -->
+    <!-- ============================================ -->
 
-    <!-- If you want the page to have a "CTA", remove the {# and #} below -->
-    {# {% include 'sections/cta.html' %} #}
+    <section id="cm-hero">
+        <div class="cs-container">
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/family-close.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/family-close.jpg">
+                <img loading="eager" decoding="async" src="/assets/images/family-close.jpg" alt="A foster or adoptive family embracing together, representing the connection found in the Redeemed Arrow community." width="1920" height="1280">
+                <!--Image by <a href="https://pixabay.com/users/alisadyson-25286447/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7257182">AlisaDyson</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=7257182">Pixabay</a>-->
+            </picture>
+            <div class="cs-content">
+                <span class="cs-topper">Community Membership</span>
+                <h1 class="cs-title">A Private Support Community for Foster &amp; Adoptive Parents</h1>
+                <p class="cs-text">
+                    <strong>Community membership</strong> is your always-on connection to other foster, adoptive, and kinship parents and the Redeemed Arrow team, in a private space you can open any day, any time.
+                </p>
+                <p class="cs-text">
+                    Coaching calls happen on a schedule. Parenting doesn't. The community gives you somewhere to go the moment you need encouragement, a quick answer, or proof that another parent has been exactly where you are.
+                </p>
+                <a href="/membership/" class="cs-button-solid" aria-label="see membership plans">SEE MEMBERSHIP PLANS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--         Highlight: Included On Every Plan    -->
+    <!-- ============================================ -->
+
+    <section id="cm-highlight">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Included With Every Plan, No Upgrade Required</h2>
+                <p class="cs-text">
+                    Community membership isn't locked to a single tier. It's built into <strong>every</strong> Redeemed Arrow plan and lives on <strong>Circle</strong>, our private community platform. Look for the community launcher right on our home page any time you want to jump in.
+                </p>
+                <ul class="cs-tier-group">
+                    <li class="cs-tier">Supported</li>
+                    <li class="cs-tier">Equipped</li>
+                    <li class="cs-tier">Renewed</li>
+                </ul>
+                <a href="/" class="cs-button-solid" aria-label="visit the community from the home page">VISIT THE COMMUNITY</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               Who, What & Why                -->
+    <!-- ============================================ -->
+
+    <section id="cm-www">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Who, What &amp; Why</span>
+                <h2 class="cs-title">Is Community Membership Right for Your Family?</h2>
+                <p class="cs-text">
+                    Community membership is the foundation every Redeemed Arrow plan is built on. Here's exactly who it's for, what it includes, and why members lean on it between coaching sessions.
+                </p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy1.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">Who It's For</h3>
+                    <p class="cs-item-text">
+                        Every Redeemed Arrow member, on every plan. Whether you just joined Supported or you're on the Renewed plan with private coaching, community access is already part of your membership.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy2.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">What It Includes</h3>
+                    <p class="cs-item-text">
+                        A private space on Circle where you can post questions, share wins, and hear from other foster, adoptive, and kinship parents and our team, any day, any time, right from our home page.
+                    </p>
+                </li>
+                <li class="cs-item">
+                    <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/therapy3.svg" alt="icon" width="72" height="72">
+                    <h3 class="cs-h3">Why It Matters</h3>
+                    <p class="cs-item-text">
+                        Trauma-informed parenting can feel isolating. The community normalizes the struggle, keeps you connected between sessions, and reminds you that you're not doing this alone.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--        Side By Side Reverse (The Offer)      -->
+    <!-- ============================================ -->
+
+    <section id="cm-offer">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Part of Every Plan</span>
+                <h2 class="cs-title">One Community, Every Membership Tier</h2>
+                <p class="cs-text">
+                    Unlike individual and group coaching, community membership isn't reserved for a specific plan. It's included the moment you join, no matter which tier you choose.
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Full access to the private Redeemed Arrow community, hosted on Circle
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Included with Supported, Equipped, and Renewed, no upgrade required
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Post questions and get support from other members and our team any time
+                    </li>
+                    <li class="cs-li">
+                        <img class="cs-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/swirl.svg" alt="checkmark" width="24" height="24">
+                        Reachable right from our home page, just look for the community launcher
+                    </li>
+                </ul>
+                <a href="/membership/" class="cs-link">SEE MEMBERSHIP PLANS &amp; PRICING</a>
+            </div>
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people9.jpg">
+                <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people9.jpg">
+                <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people9.jpg" alt="A group of parents connecting together, reflecting the peer support found in the Redeemed Arrow community." width="586" height="690">
+            </picture>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--             FAQ (Accordion)                  -->
+    <!-- ============================================ -->
+
+    <section id="cm-faq">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Common Questions</span>
+                <h2 class="cs-title">Community Membership FAQ</h2>
+            </div>
+            <div class="cs-faq-group">
+                <details class="cs-details" open>
+                    <summary class="cs-summary">What is community membership?</summary>
+                    <p class="cs-faq-text">
+                        Community membership is ongoing access to Redeemed Arrow's private online community, where foster, adoptive, and kinship parents connect, ask questions, and support each other outside of scheduled coaching calls.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">Is community membership included in every plan?</summary>
+                    <p class="cs-faq-text">
+                        Yes. Community membership is included in all three plans, Supported, Equipped, and Renewed, so every member has it from day one with no upgrade required.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">What platform does the Redeemed Arrow community use?</summary>
+                    <p class="cs-faq-text">
+                        The Redeemed Arrow community lives on Circle, a private community platform used to host our members' discussions and support threads.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How do I access the community?</summary>
+                    <p class="cs-faq-text">
+                        Once you're a member, you can open the community anytime using the Circle community launcher on our <a href="/">home page</a>.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">How is community membership different from group or individual coaching?</summary>
+                    <p class="cs-faq-text">
+                        Community membership is an always-on discussion space included with every plan. <a href="/group-coaching/">Group coaching</a>, included in the Equipped plan, and <a href="/parent-coaching/">individual coaching</a>, included in the Renewed plan, add live, scheduled sessions with a consultant on top of that community access.
+                    </p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">Do I need a paid plan to join the community?</summary>
+                    <p class="cs-faq-text">
+                        Yes, an active Supported, Equipped, or Renewed membership is required. Community access is included the moment you sign up, at any tier.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    CTA                       -->
+    <!-- ============================================ -->
+
+    <section id="cm-cta">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Ready to Connect With Other Parents?</h2>
+                <p class="cs-text">
+                    Community membership comes with every Redeemed Arrow plan. Join today and open the community anytime from our home page.
+                </p>
+                <div class="cs-button-group">
+                    <a href="/membership/" class="cs-button-solid" aria-label="join a membership plan">JOIN A MEMBERSHIP PLAN</a>
+                    <a href="/" class="cs-button-transparent" aria-label="visit the community from the home page">VISIT THE COMMUNITY</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% endblock %}
-
-
-
-
