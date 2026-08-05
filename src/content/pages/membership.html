@@ -151,25 +151,13 @@ eleventyComputed:
     <!--          Side By Side (Intro / Hero)         -->
     <!-- ============================================ -->
 
-    <section id="sbsr-950">
+    <section id="membership-hero">
         <div class="cs-container">
-            <div class="cs-image-group">
-                <picture class="cs-picture cs-picture1">
-                    <source media="(max-width: 600px)" srcset="/assets/images/family-close.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/family-close.jpg">
-                    <img loading="eager" decoding="async" src="/assets/images/family-close.jpg" alt="A foster or adoptive family embracing together." width="349" height="590">
-                </picture>
-                <picture class="cs-picture cs-picture2">
-                    <source media="(max-width: 600px)" srcset="/assets/images/family-party.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/family-party.jpg">
-                    <img loading="lazy" decoding="async" src="/assets/images/family-party.jpg" alt="A family celebrating together." width="281" height="387">
-                </picture>
-                <picture class="cs-picture cs-picture3">
-                    <source media="(max-width: 600px)" srcset="/assets/images/mom-child.jpg">
-                    <source media="(min-width: 601px)" srcset="/assets/images/mom-child.jpg">
-                    <img loading="lazy" decoding="async" src="/assets/images/mom-child.jpg" alt="A mother and young child holding hands." width="281" height="280">
-                </picture>
-            </div>
+            <picture class="cs-picture">
+                <source media="(max-width: 600px)" srcset="/assets/images/family-close.jpg">
+                <source media="(min-width: 601px)" srcset="/assets/images/family-close.jpg">
+                <img loading="eager" decoding="async" src="/assets/images/family-close.jpg" alt="A foster or adoptive family embracing together, representing the families supported by Redeemed Arrow membership." width="1920" height="1280">
+            </picture>
             <div class="cs-content">
                 <span class="cs-topper">Membership Plans</span>
                 <h1 class="cs-title">Find the Right Level of Support for Your Family</h1>
@@ -291,7 +279,7 @@ eleventyComputed:
     </section>
 
     <!-- ============================================ -->
-    <!--             FAQ (Plain Accordion)            -->
+    <!--             FAQ (Accordion)                  -->
     <!-- ============================================ -->
 
     <section id="membership-faq">
@@ -301,30 +289,49 @@ eleventyComputed:
                 <h2 class="cs-title">Membership FAQ</h2>
             </div>
             <div class="cs-faq-group">
-                <details open>
-                    <summary>What membership plans does Redeemed Arrow offer?</summary>
-                    <p>Redeemed Arrow offers three membership tiers: Supported ($47/month), Equipped ($97/month), and Renewed ($147/month). Each tier builds on the one before it, adding live coaching and more personalized support.</p>
+                <details class="cs-details" open>
+                    <summary class="cs-summary">What membership plans does Redeemed Arrow offer?</summary>
+                    <p class="cs-faq-text">Redeemed Arrow offers three membership tiers: Supported ($47/month), Equipped ($97/month), and Renewed ($147/month). Each tier builds on the one before it, adding live coaching and more personalized support.</p>
                 </details>
-                <details>
-                    <summary>What's included in every plan?</summary>
-                    <p>Every plan, starting with Supported, includes full access to <a href="/behavior-training/">The Vault training library</a>, the resource library, <a href="/community-membership/">community support on Circle</a>, on-demand replays of live sessions, and a new member cohort training session.</p>
+                <details class="cs-details">
+                    <summary class="cs-summary">What's included in every plan?</summary>
+                    <p class="cs-faq-text">Every plan, starting with Supported, includes full access to <a href="/behavior-training/">The Vault training library</a>, the resource library, <a href="/community-membership/">community support on Circle</a>, on-demand replays of live sessions, and a new member cohort training session.</p>
                 </details>
-                <details>
-                    <summary>What does the Equipped plan add?</summary>
-                    <p>Equipped includes everything in Supported, plus <a href="/group-coaching/">live group coaching sessions</a> twice a month, access to an Ask-Me-Anything thread, and early access to new content and resources.</p>
+                <details class="cs-details">
+                    <summary class="cs-summary">What does the Equipped plan add?</summary>
+                    <p class="cs-faq-text">Equipped includes everything in Supported, plus <a href="/group-coaching/">live group coaching sessions</a> twice a month, access to an Ask-Me-Anything thread, and early access to new content and resources.</p>
                 </details>
-                <details>
-                    <summary>What does the Renewed plan add?</summary>
-                    <p>Renewed includes everything in Equipped, plus one <a href="/parent-coaching/">private 1:1 coaching session</a> per month with a senior consultant, a personalized behavior plan, and priority 24-hour response time for direct-message support.</p>
+                <details class="cs-details">
+                    <summary class="cs-summary">What does the Renewed plan add?</summary>
+                    <p class="cs-faq-text">Renewed includes everything in Equipped, plus one <a href="/parent-coaching/">private 1:1 coaching session</a> per month with a senior consultant, a personalized behavior plan, and priority 24-hour response time for direct-message support.</p>
                 </details>
-                <details>
-                    <summary>Can I switch plans later?</summary>
-                    <p>Yes. You can upgrade to a higher tier as your family's needs change. <a href="/contact/">Contact our team</a> for help moving between plans.</p>
+                <details class="cs-details">
+                    <summary class="cs-summary">Can I switch plans later?</summary>
+                    <p class="cs-faq-text">Yes. You can upgrade to a higher tier as your family's needs change. <a href="/contact/">Contact our team</a> for help moving between plans.</p>
                 </details>
-                <details>
-                    <summary>How do I sign up?</summary>
-                    <p>Choose the plan that fits your family above to join through our community platform, or <a href="/contact/">contact us</a> first if you have questions about which tier is right for you.</p>
+                <details class="cs-details">
+                    <summary class="cs-summary">How do I sign up?</summary>
+                    <p class="cs-faq-text">Choose the plan that fits your family above to join through our community platform, or <a href="/contact/">contact us</a> first if you have questions about which tier is right for you.</p>
                 </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    CTA                       -->
+    <!-- ============================================ -->
+
+    <section id="membership-cta">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h2 class="cs-title">Ready to Join Redeemed Arrow?</h2>
+                <p class="cs-text">
+                    Pick the plan that fits your family today, or reach out first if you'd like help choosing the right tier.
+                </p>
+                <div class="cs-button-group">
+                    <a href="{{ client.socials.mighty }}" class="cs-button-solid" aria-label="join a membership plan">JOIN A MEMBERSHIP PLAN</a>
+                    <a href="/contact/" class="cs-button-transparent" aria-label="have questions, contact us">HAVE QUESTIONS? CONTACT US</a>
+                </div>
             </div>
         </div>
     </section>
