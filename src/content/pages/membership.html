@@ -12,6 +12,7 @@ eleventyComputed:
 {% block head %}
 
     <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
+    <script defer src="/assets/js/membership.js"></script>
 
     <!-- Structured data: helps search engines and AI assistants answer "what does membership cost / include" style questions directly (SEO/AEO/GEO) -->
     <script type="application/ld+json">
@@ -126,7 +127,7 @@ eleventyComputed:
                         "name": "Can I switch plans later?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. You can upgrade to a higher tier as your family's needs change. Contact our team for help moving between plans."
+                            "text": "Yes. You can change your membership tier at any time. Upgrades take effect immediately, and downgrades take effect at your next billing cycle. Contact our team for help moving between plans."
                         }
                     },
                     {
@@ -135,6 +136,46 @@ eleventyComputed:
                         "acceptedAnswer": {
                             "@type": "Answer",
                             "text": "Choose the plan that fits your family below to join through our community platform, or contact us first if you have questions about which tier is right for you."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is this therapy or clinical services?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Redeemed Arrow is a consulting and education community, not a clinical mental health service and not a substitute for therapy. We provide behavior strategies, parent training, and support rooted in ABA and trauma-informed frameworks. If your child needs clinical services, we encourage you to pursue those alongside membership here."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What if I'm not a licensed foster parent yet?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "You are still welcome here. Many members are in the process of getting licensed or are considering fostering. The training vault and community are valuable at any stage of the journey."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What does the free week include?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Your free week gives you full access to the tier you select, including the training vault, community, and resources. No credit card is required to start. At the end of 7 days you can continue by entering your payment details or cancel with no charge."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is the community faith-based?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Redeemed Arrow is faith-informed, rooted in a sense of calling and purpose, but the community is open and welcoming to all foster families regardless of faith background. The tools, strategies, and support are built for every foster parent."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does my agency qualify for a group license?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. We offer group licensing for foster care agencies who want to provide this as a resource for their families. Contact us directly to discuss pricing and setup for your organization."
                         }
                     }
                 ]
@@ -159,13 +200,123 @@ eleventyComputed:
                 <img loading="eager" decoding="async" src="/assets/images/family-close.jpg" alt="A foster or adoptive family embracing together, representing the families supported by Redeemed Arrow membership." width="1920" height="1280">
             </picture>
             <div class="cs-content">
-                <span class="cs-topper">Membership Plans</span>
-                <h1 class="cs-title">Find the Right Level of Support for Your Family</h1>
+                <span class="cs-topper">MEMBERSHIP PLANS</span>
+                <h1 class="cs-title">YOU WERE NEVER SUPPOSED TO FIGURE THIS OUT ALONE</h1>
                 <p class="cs-text">
-                    Every Redeemed Arrow membership includes The Vault's on-demand training library, our resource library, and full community support. As you move up in tier, you add live group coaching and then private, one-on-one coaching with a senior consultant. Compare the three plans below and join the one that fits where your family is right now.
+                    <i>The membership community built for foster parents who need more than good intentions.</i>
+                    <br><br>
+                    Inside the Redeemed Arrow community, there is a group of people just like you, going through challenges with hope, and waiting to support you on your journey. You will get access to a full on-demand training vault organized by the behaviors that matter most — meltdowns, food hoarding, school refusal, regression, defiance, and more. You'll get live group coaching calls twice a month where you can bring your real scenarios and get coached through them. You get a private community of foster parents who understand your world. And depending on your membership tier, you get direct consulting access — a personalized behavior plan built for your specific child, and educational advocacy when schools won't hear your concerns.
+                    <br><br>
+                    This is not a course you buy and forget. It is ongoing support that grows with you.
                 </p>
                 <a href="/contact/" class="cs-button-solid" aria-label="have questions about membership, contact us">HAVE QUESTIONS? CONTACT US</a>
+                <span class="cs-disclaimer">First week free &middot; No credit card required &middot; Cancel anytime</span>
             </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Trust Bar                    -->
+    <!-- ============================================ -->
+
+    <section id="membership-proof">
+        <div class="cs-container">
+            <ul class="cs-item-group">
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">🏹</span>
+                    <span class="cs-item-text">Specialized for foster families</span>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">🧠</span>
+                    <span class="cs-item-text">Trauma-informed + ABA-backed</span>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">🎓</span>
+                    <span class="cs-item-text">Led by a Board Certified Behavior Analyst</span>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">🔒</span>
+                    <span class="cs-item-text">Private, safe community space</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                Pain / Empathy                -->
+    <!-- ============================================ -->
+
+    <section id="membership-pain">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">SOUND FAMILIAR?</span>
+                <h2 class="cs-title">YOU LOVE YOUR FOSTER CHILD. AND YOU STILL FEEL COMPLETELY LOST.</h2>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">😮‍💨</span>
+                    <p class="cs-item-text">"I've tried everything. Nothing is working. I don't know what else to do."</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">💭</span>
+                    <p class="cs-item-text">"My caseworker doesn't have answers. My family doesn't understand. I feel completely alone in this."</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">💔</span>
+                    <p class="cs-item-text">"I love this child with everything I have. And some days I still wonder if I can keep doing this."</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">🤯</span>
+                    <p class="cs-item-text">"The meltdowns, the lying, the defiance &mdash; I was told to just be patient. That's not enough."</p>
+                </li>
+            </ul>
+            <p class="cs-pivot">"What you're experiencing has a name, a reason, and a path forward. You just haven't had access to it yet."</p>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--               What's Inside                  -->
+    <!-- ============================================ -->
+
+    <section id="membership-features">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">INSIDE THE MEMBERSHIP</span>
+                <h2 class="cs-title">EVERYTHING YOU NEED, ALL IN ONE PLACE</h2>
+                <p class="cs-text">No more searching for answers at midnight. No more generic parenting advice that doesn't account for trauma. Everything inside Redeemed Arrow is built specifically for foster families.</p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">📚</span>
+                    <h3 class="cs-h3">On-Demand Training Vault</h3>
+                    <p class="cs-item-text">20+ video trainings organized by behavior &mdash; meltdowns, food hoarding, school refusal, regression, aggression, defiance, and more. Available 24/7 at your pace.</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">🎙️</span>
+                    <h3 class="cs-h3">Live Group Coaching Calls</h3>
+                    <p class="cs-item-text">Twice monthly Zoom sessions where you bring your real scenarios and get coached live by a Board Certified Behavior Analyst who specializes in foster care.</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">💬</span>
+                    <h3 class="cs-h3">Private Community</h3>
+                    <p class="cs-item-text">A safe, moderated space with foster parents who genuinely understand your world. Ask questions, share wins, and find support at any hour.</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">📋</span>
+                    <h3 class="cs-h3">Done-For-You Resources</h3>
+                    <p class="cs-item-text">Printable behavior tracking sheets, co-regulation scripts, visual schedules, and communication templates for caseworkers and schools.</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">💡</span>
+                    <h3 class="cs-h3">Ask-Me-Anything Thread</h3>
+                    <p class="cs-item-text">Post your specific behavior questions and receive a response within 48 hours from your behavior analyst. Available in Equipped and Renewed tiers.</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-icon" aria-hidden="true">🤝</span>
+                    <h3 class="cs-h3">1:1 Private Consulting</h3>
+                    <p class="cs-item-text">A monthly private session where we build a behavior support plan for your specific child. Available in the Renewed tier.</p>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -181,13 +332,20 @@ eleventyComputed:
                 <p class="cs-text">
                     We offer three membership tiers to meet every family where they are. Each tier is designed to provide the right level of support and resources to help you achieve your goals. Choose the membership that best fits your needs and start your journey towards a brighter future today.
                 </p>
+                <br><br>
+                <p class="cs-text"><em>Every tier includes your first week free. No credit card required to start.</em></p>
+            </div>
+            <div class="cs-billing-toggle" id="billingToggle">
+                <button type="button" class="cs-toggle-btn active" data-billing="monthly">Monthly</button>
+                <button type="button" class="cs-toggle-btn" data-billing="annual">Annual <span class="cs-save-badge">Save 2 months</span></button>
             </div>
             <ul class="cs-card-group">
                 <li class="cs-item">
                     <div class="cs-top">
                         <span class="cs-package">SUPPORTED</span>
-                        <span class="cs-price">$47</span>
+                        <span class="cs-price">$<span class="price-val" data-monthly="47" data-annual="39">47</span></span>
                         <span class="cs-desc">Per Month</span>
+                        <span class="cs-annual-note" data-monthly="Billed monthly" data-annual="Billed $470/year &mdash; 2 months free">Billed monthly</span>
                         <picture class="cs-background">
                             <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
                         </picture>
@@ -219,8 +377,9 @@ eleventyComputed:
                 <li class="cs-item cs-popular">
                     <div class="cs-top">
                         <span class="cs-package">EQUIPPED</span>
-                        <span class="cs-price">$97</span>
+                        <span class="cs-price">$<span class="price-val" data-monthly="97" data-annual="81">97</span></span>
                         <span class="cs-desc">Per Month</span>
+                        <span class="cs-annual-note" data-monthly="Billed monthly" data-annual="Billed $970/year &mdash; 2 months free">Billed monthly</span>
                         <picture class="cs-background">
                             <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
                         </picture>
@@ -248,8 +407,9 @@ eleventyComputed:
                 <li class="cs-item">
                     <div class="cs-top">
                         <span class="cs-package">RENEWED</span>
-                        <span class="cs-price">$147</span>
+                        <span class="cs-price">$<span class="price-val" data-monthly="147" data-annual="123">147</span></span>
                         <span class="cs-desc">Per Month</span>
+                        <span class="cs-annual-note" data-monthly="Billed monthly" data-annual="Billed $1,470/year &mdash; 2 months free">Billed monthly</span>
                         <picture class="cs-background">
                             <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FGraphics%2FTopographic.svg" alt="" width="" height="" loading="lazy" decoding="async" aria-hidden="true">
                         </picture>
@@ -275,8 +435,81 @@ eleventyComputed:
                     <a href="{{ client.socials.mighty }}" class="cs-button-solid cs-price-button" aria-label="sign up for the renewed plan">SIGN UP</a>
                 </li>
             </ul>
+            <p class="cs-value-note">Compare: one hour of private BCBA consulting costs $75&ndash;$150 on the open market. The Renewed tier delivers a full private session, plus everything else, every single month.</p>
         </div>
     </section>
+
+    <!-- ============================================ -->
+    <!--             Plan Comparison                  -->
+    <!-- ============================================ -->
+
+    <section id="membership-compare">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Full comparison</span>
+                <h2 class="cs-title">What's included in each tier</h2>
+            </div>
+            <div class="cs-compare-wrap">
+                <table class="cs-compare-table">
+                    <thead>
+                        <tr>
+                            <th class="cs-col-feature">Feature</th>
+                            <th>Supported<br><span class="cs-th-price">$47/mo</span></th>
+                            <th>Equipped<br><span class="cs-th-price">$97/mo</span></th>
+                            <th>Renewed<br><span class="cs-th-price">$147/mo</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Full training vault access</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>Resource library access</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>Community support access</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>On-demand re-plays of all live sessions</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>New member cohort training session</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>Live group coaching sessions (2x/month)</td><td class="cs-no">&ndash;</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>Access to Ask-Me-Anything thread</td><td class="cs-no">&ndash;</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>Early access to new content and resources</td><td class="cs-no">&ndash;</td><td class="cs-yes">&#10003;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>Monthly 1:1 coaching session with a senior consultant</td><td class="cs-no">&ndash;</td><td class="cs-no">&ndash;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>Personalized strategies tailored to your child</td><td class="cs-no">&ndash;</td><td class="cs-no">&ndash;</td><td class="cs-yes">&#10003;</td></tr>
+                        <tr><td>Priority 24-hour response via direct messaging</td><td class="cs-no">&ndash;</td><td class="cs-no">&ndash;</td><td class="cs-yes">&#10003;</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================ -->
+    <!--               Testimonials                   -->
+    <!-- ============================================ -->
+    <!-- PLACEHOLDER CONTENT: replace the quotes, names, and roles below with real member testimonials before this section goes live. Do not publish fabricated quotes as genuine member feedback. -->
+    <!--
+    <section id="membership-testimonials">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">What members are saying</span>
+                <h2 class="cs-title">Real words from real foster families</h2>
+                <p class="cs-placeholder-flag">Placeholder testimonials &mdash; replace with real member quotes before publishing.</p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <p class="cs-quote">"I finally feel like I understand why she does what she does. I stopped taking the behavior personally, and everything shifted."</p>
+                    <span class="cs-name">Sarah M.</span>
+                    <span class="cs-role">Foster parent &middot; Equipped member</span>
+                </li>
+                <li class="cs-item">
+                    <p class="cs-quote">"The 1:1 session was worth every penny. I left with an actual plan, not just reassurance that I was doing a good job."</p>
+                    <span class="cs-name">David &amp; Kim R.</span>
+                    <span class="cs-role">Foster parents &middot; Renewed members</span>
+                </li>
+                <li class="cs-item">
+                    <p class="cs-quote">"I've been fostering for four years and this community has given me more useful tools in two months than everything else combined."</p>
+                    <span class="cs-name">Tamara J.</span>
+                    <span class="cs-role">Foster parent &middot; Supported member</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    -->
 
     <!-- ============================================ -->
     <!--             FAQ (Accordion)                  -->
@@ -307,11 +540,31 @@ eleventyComputed:
                 </details>
                 <details class="cs-details">
                     <summary class="cs-summary">Can I switch plans later?</summary>
-                    <p class="cs-faq-text">Yes. You can upgrade to a higher tier as your family's needs change. <a href="/contact/">Contact our team</a> for help moving between plans.</p>
+                    <p class="cs-faq-text">Yes. You can change your membership tier at any time. Upgrades take effect immediately, and downgrades take effect at your next billing cycle. <a href="/contact/">Contact our team</a> for help moving between plans.</p>
                 </details>
                 <details class="cs-details">
                     <summary class="cs-summary">How do I sign up?</summary>
                     <p class="cs-faq-text">Choose the plan that fits your family above to join through our community platform, or <a href="/contact/">contact us</a> first if you have questions about which tier is right for you.</p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">Is this therapy or clinical services?</summary>
+                    <p class="cs-faq-text">No. Redeemed Arrow is a consulting and education community &mdash; not a clinical mental health service and not a substitute for therapy. We provide behavior strategies, parent training, and support rooted in ABA and trauma-informed frameworks. If your child needs clinical services, we encourage you to pursue those alongside membership here.</p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">What if I'm not a licensed foster parent yet?</summary>
+                    <p class="cs-faq-text">You are still welcome here. Many members are in the process of getting licensed or are considering fostering. The training vault and community are valuable at any stage of the journey.</p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">What does the free week include?</summary>
+                    <p class="cs-faq-text">Your free week gives you full access to the tier you select &mdash; including the training vault, community, and resources. No credit card is required to start. At the end of 7 days you can continue by entering your payment details or cancel with no charge.</p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">Is the community faith-based?</summary>
+                    <p class="cs-faq-text">Redeemed Arrow is faith-informed &mdash; rooted in a sense of calling and purpose &mdash; but the community is open and welcoming to all foster families regardless of faith background. The tools, strategies, and support are built for every foster parent.</p>
+                </details>
+                <details class="cs-details">
+                    <summary class="cs-summary">Does my agency qualify for a group license?</summary>
+                    <p class="cs-faq-text">Yes. We offer group licensing for foster care agencies who want to provide this as a resource for their families. <a href="/contact/">Contact us</a> directly to discuss pricing and setup for your organization.</p>
                 </details>
             </div>
         </div>

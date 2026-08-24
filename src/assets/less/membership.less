@@ -1,7 +1,9 @@
 /*
- * Note: the Pricing section (#pricing-861) on this page reuses the exact
- * section ID already styled globally in root.less, so it isn't redefined
- * here. The Hero, FAQ, and CTA sections below match the pattern used on
+ * Note: the Pricing section (#pricing-861) reuses the card/grid styles
+ * already defined globally in root.less, so those aren't redefined here.
+ * This file only adds the billing toggle, annual price note, and value
+ * note that are new to this page (see "Pricing Extras" below). The Hero,
+ * FAQ, and CTA sections below match the pattern used on
  * behavior-training.less, group-coaching.less, parent-coaching.less, and
  * community-membership.less.
  */
@@ -69,6 +71,13 @@
                 margin-bottom: (32/16rem);
             }
         }
+
+        .cs-disclaimer {
+            font-size: (13/16rem);
+            margin-top: (12/16rem);
+            color: var(--bodyTextColor);
+            opacity: 0.65;
+        }
     }
 }
 
@@ -106,6 +115,533 @@
     }
 }
 /* End Hero / Intro */
+
+
+/*-- -------------------------- -->
+<---          Trust Bar         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #membership-proof {
+        padding: (24/16rem) 1rem;
+        background-color: #fff;
+        border-top: 1px solid #D2D8DF;
+        border-bottom: 1px solid #D2D8DF;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+        }
+
+        .cs-item-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: (12/16rem) (28/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: (10/16rem);
+        }
+
+        .cs-icon {
+            font-size: (20/16rem);
+            line-height: 1;
+            display: block;
+        }
+
+        .cs-item-text {
+            font-size: (13/16rem);
+            line-height: 1.3em;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+    }
+}
+/* End Trust Bar */
+
+
+/*-- -------------------------- -->
+<---       Pain / Empathy       -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #membership-pain {
+        padding: var(--sectionPadding);
+        background-color: var(--secondary);
+
+        .cs-container {
+            width: 100%;
+            max-width: (900/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 40px - 48px */
+            gap: clamp(2.5rem, 5vw, 3rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-topper {
+            color: #D8BFF0;
+        }
+
+        .cs-title {
+            color: #fff;
+            max-width: 26ch;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: (14/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            text-align: left;
+            margin: 0;
+            padding: (20/16rem);
+            background-color: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: (12/16rem);
+            box-sizing: border-box;
+            grid-column: span 12;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (8/16rem);
+        }
+
+        .cs-icon {
+            font-size: (22/16rem);
+            line-height: 1;
+            display: block;
+        }
+
+        .cs-item-text {
+            font-size: (14/16rem);
+            font-style: italic;
+            line-height: 1.6em;
+            margin: 0;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .cs-pivot {
+            font-size: clamp(1.05rem, 2.6vw, 1.3rem);
+            font-style: italic;
+            font-weight: 600;
+            line-height: 1.6em;
+            text-align: center;
+            max-width: (640/16rem);
+            margin: 0;
+            color: #fff;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #membership-pain {
+        .cs-item {
+            grid-column: span 6;
+        }
+    }
+}
+/* End Pain / Empathy */
+
+
+/*-- -------------------------- -->
+<---       What's Inside        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #membership-features {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            max-width: (700/16rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 24px */
+            gap: clamp(1rem, 3vw, 1.5rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            text-align: left;
+            margin: 0;
+            /* 24px - 32px */
+            padding: clamp(1.5rem, 3vw, 2rem);
+            background-color: #FBF9F5;
+            border: 1px solid #D2D8DF;
+            border-radius: (16/16rem);
+            box-sizing: border-box;
+            grid-column: span 12;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            transition: box-shadow 0.3s, transform 0.3s;
+
+            &:hover {
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+                transform: translateY(-4px);
+            }
+        }
+
+        .cs-icon {
+            font-size: (32/16rem);
+            line-height: 1;
+            margin-bottom: (16/16rem);
+            display: block;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            margin: 0 0 (8/16rem) 0;
+            color: var(--headerColor);
+        }
+
+        .cs-item-text {
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #membership-features {
+        .cs-item {
+            grid-column: span 6;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #membership-features {
+        .cs-item {
+            grid-column: span 4;
+        }
+    }
+}
+/* End What's Inside */
+
+
+/*-- -------------------------- -->
+<---       Pricing Extras       -->
+<--- (billing toggle, annual   -->
+<---  note, value note)        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #pricing-861 {
+        .cs-billing-toggle {
+            display: inline-flex;
+            background-color: #FBF9F5;
+            border: 1px solid #D2D8DF;
+            border-radius: (30/16rem);
+            padding: (4/16rem);
+            margin-top: (8/16rem);
+        }
+
+        .cs-toggle-btn {
+            font-family: var(--bodyFont);
+            font-size: (13/16rem);
+            font-weight: 600;
+            padding: (8/16rem) (20/16rem);
+            border-radius: (24/16rem);
+            border: none;
+            background-color: transparent;
+            color: var(--bodyTextColor);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background-color 0.2s, color 0.2s;
+
+            &.active {
+                background-color: var(--secondary);
+                color: #fff;
+            }
+        }
+
+        .cs-save-badge {
+            display: inline-block;
+            font-size: (11/16rem);
+            font-weight: 700;
+            background-color: #DDF0EE;
+            color: var(--primary);
+            padding: (2/16rem) (8/16rem);
+            border-radius: (10/16rem);
+            margin-left: (4/16rem);
+            vertical-align: middle;
+        }
+
+        .cs-annual-note {
+            font-size: (12/16rem);
+            font-weight: 600;
+            width: 100%;
+            margin-top: (4/16rem);
+            color: var(--primary);
+            display: block;
+            text-align: center;
+        }
+
+        .cs-value-note {
+            font-size: (13/16rem);
+            font-style: italic;
+            max-width: (640/16rem);
+            margin: (8/16rem) auto 0;
+            color: var(--bodyTextColor);
+            opacity: 0.75;
+            text-align: center;
+        }
+    }
+}
+/* End Pricing Extras */
+
+
+/*-- -------------------------- -->
+<---       Plan Comparison      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #membership-compare {
+        padding: var(--sectionPadding);
+        padding-top: 0;
+        background-color: #fff;
+
+        .cs-container {
+            width: 100%;
+            max-width: (900/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 40px - 48px */
+            gap: clamp(2.5rem, 5vw, 3rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-compare-wrap {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .cs-compare-table {
+            width: 100%;
+            min-width: (560/16rem);
+            border-collapse: collapse;
+            font-size: (14/16rem);
+
+            th,
+            td {
+                padding: (12/16rem) (16/16rem);
+                text-align: center;
+                border-bottom: 1px solid #D2D8DF;
+            }
+
+            th {
+                font-size: (12/16rem);
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+                color: var(--headerColor);
+                border-bottom: 2px solid #D2D8DF;
+            }
+
+            .cs-th-price {
+                font-weight: 400;
+                letter-spacing: 0;
+                text-transform: none;
+                color: var(--bodyTextColor);
+                opacity: 0.7;
+            }
+
+            .cs-col-feature,
+            td:first-child {
+                text-align: left;
+                font-weight: 500;
+                color: var(--headerColor);
+            }
+
+            tbody tr:nth-child(even) td {
+                background-color: #FBF9F5;
+            }
+
+            .cs-yes {
+                color: var(--primary);
+                font-weight: 700;
+            }
+
+            .cs-no {
+                color: #B7B7B7;
+            }
+        }
+    }
+}
+/* End Plan Comparison */
+
+
+/*-- -------------------------- -->
+<---        Testimonials        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #membership-testimonials {
+        padding: var(--sectionPadding);
+        background-color: #FBF9F5;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1100/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 40px - 48px */
+            gap: clamp(2.5rem, 5vw, 3rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-placeholder-flag {
+            font-size: (12/16rem);
+            font-style: italic;
+            margin-top: (8/16rem);
+            color: #A8681E;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: (16/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            text-align: left;
+            margin: 0;
+            padding: clamp(1.25rem, 3vw, 1.75rem);
+            background-color: #fff;
+            border: 1px solid #D2D8DF;
+            border-radius: (14/16rem);
+            box-sizing: border-box;
+            grid-column: span 12;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (10/16rem);
+        }
+
+        .cs-quote {
+            font-style: italic;
+            line-height: 1.6em;
+            margin: 0;
+            color: var(--headerColor);
+        }
+
+        .cs-name {
+            font-size: (13/16rem);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--secondary);
+        }
+
+        .cs-role {
+            font-size: (12/16rem);
+            color: var(--bodyTextColor);
+            opacity: 0.6;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #membership-testimonials {
+        .cs-item {
+            grid-column: span 6;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #membership-testimonials {
+        .cs-item {
+            grid-column: span 4;
+        }
+    }
+}
+/* End Testimonials */
 
 
 /*-- -------------------------- -->
