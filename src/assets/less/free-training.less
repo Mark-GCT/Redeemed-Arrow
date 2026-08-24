@@ -1,0 +1,337 @@
+/*-- -------------------------- -->
+<---   Free Workshop Registration -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #ft-registration {
+        padding: var(--sectionPadding);
+        /* extra clearance so content isn't hidden behind the fixed nav */
+        padding-top: clamp(9rem, 15vw, 11rem);
+        background-color: #FBF9F5;
+
+        .cs-container {
+            width: 100%;
+            max-width: (600/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            /* 32px - 40px */
+            gap: clamp(2rem, 4vw, 2.5rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-title {
+            max-width: 100%;
+            margin-bottom: (16/16rem);
+
+            em {
+                font-style: italic;
+                color: var(--primary);
+            }
+        }
+
+        .cs-text {
+            max-width: 100%;
+            margin: 0;
+        }
+
+        /* "You'll Leave Knowing" box */
+        .cs-includes {
+            width: 100%;
+            /* 20px - 24px */
+            padding: clamp(1.25rem, 3vw, 1.5rem);
+            background-color: rgba(26, 122, 138, 0.08);
+            border-radius: (12/16rem);
+            box-sizing: border-box;
+        }
+
+        .cs-includes-label {
+            font-size: (13/16rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: (12/16rem);
+            color: var(--primary);
+            display: block;
+        }
+
+        .cs-includes-list {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: (10/16rem);
+        }
+
+        .cs-includes-item {
+            font-size: (15/16rem);
+            line-height: 1.5em;
+            list-style: none;
+            margin: 0;
+            padding-left: (28/16rem);
+            color: var(--headerColor);
+            position: relative;
+            text-align: left;
+
+            &:before {
+                content: "✓";
+                font-weight: 700;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: var(--primary);
+            }
+        }
+
+        /* Divider */
+        .cs-divider {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: (12/16rem);
+        }
+
+        .cs-divider-line {
+            flex: 1;
+            height: 1px;
+            background-color: #D2D8DF;
+        }
+
+        .cs-divider-text {
+            font-size: (12/16rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+            color: var(--bodyTextColor);
+            opacity: 0.7;
+        }
+
+        /* Form */
+        .cs-form {
+            width: 100%;
+            /* 32px - 40px */
+            padding: clamp(2rem, 4vw, 2.5rem);
+            background-color: #fff;
+            border: 1px solid #D2D8DF;
+            border-radius: (16/16rem);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: (20/16rem);
+        }
+
+        .cs-hidden-field {
+            /* visually hides the Netlify honeypot field without hiding it from bots */
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+        }
+
+        .cs-section-label {
+            font-size: (13/16rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin: (8/16rem) 0 0;
+            padding-bottom: (10/16rem);
+            color: var(--bodyTextColor);
+            opacity: 0.7;
+            border-bottom: 1px solid #D2D8DF;
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        .cs-row {
+            display: flex;
+            flex-direction: column;
+            gap: (20/16rem);
+        }
+
+        .cs-label {
+            font-size: (14/16rem);
+            font-weight: 700;
+            line-height: 1.4em;
+            width: 100%;
+            color: var(--headerColor);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (8/16rem);
+        }
+
+        .cs-optional {
+            font-weight: 400;
+            opacity: 0.7;
+        }
+
+        .cs-required {
+            margin-left: (2/16rem);
+            color: var(--primary);
+        }
+
+        .cs-input {
+            font-family: var(--bodyFont);
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            width: 100%;
+            margin: 0;
+            padding: (12/16rem) (16/16rem);
+            color: var(--bodyTextColor);
+            background-color: #FBF9F5;
+            border: 1px solid #D2D8DF;
+            border-radius: (8/16rem);
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+
+            &:focus {
+                outline: none;
+                border-color: var(--primary);
+            }
+
+            &::placeholder {
+                color: #767676;
+                opacity: 1;
+            }
+        }
+
+        .cs-select {
+            cursor: pointer;
+        }
+
+        .cs-textarea {
+            resize: vertical;
+            min-height: (100/16rem);
+        }
+
+        /* Behavior checkbox grid */
+        .cs-check-group {
+            width: 100%;
+            margin-top: (4/16rem);
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: (8/16rem);
+        }
+
+        .cs-check-item {
+            font-size: (14/16rem);
+            line-height: 1.4em;
+            width: 100%;
+            padding: (10/16rem) (12/16rem);
+            color: var(--bodyTextColor);
+            background-color: #FBF9F5;
+            border: 1px solid #D2D8DF;
+            border-radius: (8/16rem);
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            gap: (10/16rem);
+            font-weight: 400;
+            transition: border-color 0.3s, background-color 0.3s;
+
+            &:hover {
+                cursor: pointer;
+                border-color: var(--primary);
+                background-color: rgba(26, 122, 138, 0.06);
+            }
+
+            input[type="checkbox"] {
+                width: (15/16rem);
+                height: (15/16rem);
+                margin-top: 2px;
+                flex: none;
+                accent-color: var(--primary);
+            }
+        }
+
+        .cs-privacy-note {
+            font-size: (13/16rem);
+            line-height: 1.55em;
+            margin: 0;
+            padding: (12/16rem) (14/16rem);
+            color: var(--bodyTextColor);
+            opacity: 0.8;
+            background-color: #FBF9F5;
+            border: 1px solid #D2D8DF;
+            border-radius: (8/16rem);
+            box-sizing: border-box;
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            color: #fff;
+            padding: 0 (32/16rem);
+            background-color: var(--primary);
+            border: none;
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            box-sizing: border-box;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover:before {
+                width: 100%;
+            }
+        }
+
+        .cs-submit-sub {
+            font-size: (13/16rem);
+            text-align: center;
+            margin: 0;
+            color: var(--bodyTextColor);
+            opacity: 0.7;
+        }
+    }
+}
+
+/* Tablet - 550px */
+@media only screen and (min-width: 34.375rem) {
+    #ft-registration {
+        .cs-row-2col {
+            flex-direction: row;
+        }
+
+        .cs-check-group {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+/* End Free Workshop Registration */

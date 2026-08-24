@@ -2196,3 +2196,146 @@ color: var(--bodyTextColor);
     }
 }
 /* End of Footer Styles */
+
+/*-- -------------------------- -->
+<---      CTA - Free Workshop   -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #cta-9042 {
+        padding: var(--sectionPadding);
+        background-color: #08101A;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            content: "";
+            /* 400px - 620px */
+            width: clamp(25rem, 55vw, 38.75rem);
+            height: clamp(25rem, 55vw, 38.75rem);
+            background: radial-gradient(circle, rgba(26, 122, 138, 0.35) 0%, rgba(26, 122, 138, 0) 70%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+        }
+
+        .cs-container {
+            width: 100%;
+            max-width: (768/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cs-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cs-topper {
+            color: var(--primaryLight);
+        }
+
+        .cs-title {
+            max-width: (600/16rem);
+            color: #fff;
+
+            em {
+                font-style: italic;
+                color: var(--primaryLight);
+            }
+        }
+
+        .cs-text {
+            max-width: (500/16rem);
+            color: #E8EBEF;
+        }
+
+        .cs-list {
+            width: 100%;
+            max-width: (460/16rem);
+            /* 24px - 32px */
+            margin: clamp(1.5rem, 4vw, 2rem) 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: (12/16rem);
+        }
+
+        .cs-li {
+            font-size: (16/16rem);
+            line-height: 1.4em;
+            list-style: none;
+            margin: 0;
+            padding-left: (28/16rem);
+            color: #E8EBEF;
+            position: relative;
+            text-align: left;
+
+            &:before {
+                content: "✓";
+                font-weight: 700;
+                position: absolute;
+                top: 0;
+                left: 0;
+                color: var(--primaryLight);
+            }
+        }
+
+        .cs-button-group {
+            /* 24px - 32px */
+            margin-top: clamp(1.5rem, 4vw, 2rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: (16/16rem);
+        }
+
+        .cs-link {
+            font-size: (14/16rem);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 0.2em;
+            color: #E8EBEF;
+            transition: color 0.3s;
+
+            &:hover {
+                color: var(--primaryLight);
+            }
+        }
+
+        .cs-disclaimer {
+            font-size: (13/16rem);
+            margin-top: (16/16rem);
+            color: #E8EBEF;
+            opacity: 0.6;
+        }
+    }
+}
+
+/* Tablet - 700px */
+@media only screen and (min-width: 700px) {
+    #cta-9042 {
+        .cs-button-group {
+            flex-direction: row;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #cta-9042 {
+        .cs-container {
+            max-width: (900/16rem);
+        }
+    }
+}
+/* End of CTA Styles */

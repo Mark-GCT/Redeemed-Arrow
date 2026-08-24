@@ -1,0 +1,171 @@
+---
+description: "Reserve your free spot in Redeemed Arrow's live workshop for foster parents — learn why trauma-driven behavior looks different from defiance, plus co-regulation tools you can use tonight."
+eleventyComputed:
+  title: "Free Workshop Registration | {{ client.name }} | {{ client.address.city }}, {{ client.address.state }}"
+  permalink: "/{{ page.fileSlug | slugify }}/"
+---
+
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+
+    <link rel="stylesheet" href="/assets/css/{{ page.fileSlug }}.css">
+
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--          Free Workshop Registration          -->
+    <!-- ============================================ -->
+
+    <section id="ft-registration">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Free Workshop Registration</span>
+                <h1 class="cs-title">Finally Understand <em>Why</em> Your Foster Child Does What They Do</h1>
+                <p class="cs-text">
+                    Join <strong>Rachael Elmore, MA, BCBA</strong> &mdash; founder of Redeemed Arrow and a Board Certified Behavior Analyst specializing in trauma-informed care &mdash; for a free live workshop built exclusively for foster families. No jargon. No judgment. Just real answers.
+                </p>
+            </div>
+
+            <div class="cs-includes">
+                <span class="cs-includes-label">You'll Leave Knowing</span>
+                <ul class="cs-includes-list">
+                    <li class="cs-includes-item">Why trauma-driven behavior looks different from typical defiance</li>
+                    <li class="cs-includes-item">The #1 reason standard discipline strategies don't work with foster children</li>
+                    <li class="cs-includes-item">3 co-regulation tools you can start using at home today</li>
+                    <li class="cs-includes-item">How ABA and trauma-informed care work together (and why that matters for you)</li>
+                </ul>
+            </div>
+
+            <div class="cs-divider">
+                <span class="cs-divider-line" aria-hidden="true"></span>
+                <span class="cs-divider-text">Save Your Spot</span>
+                <span class="cs-divider-line" aria-hidden="true"></span>
+            </div>
+
+            <!-- Netlify Forms: data-netlify + the hidden form-name field are what let Netlify capture submissions with no backend code -->
+            <form id="ft-form" name="free-training" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="cs-form">
+                <input type="hidden" name="form-name" value="free-training">
+                <p class="cs-hidden-field" aria-hidden="true">
+                    <label>Don't fill this out if you're human: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+                </p>
+
+                <p class="cs-section-label">Your Information</p>
+
+                <div class="cs-row cs-row-2col">
+                    <label class="cs-label" for="fname">
+                        First Name<span class="cs-required" aria-hidden="true">*</span>
+                        <input class="cs-input" type="text" id="fname" name="fname" placeholder="Sarah" autocomplete="given-name" required>
+                    </label>
+                    <label class="cs-label" for="lname">
+                        Last Name<span class="cs-required" aria-hidden="true">*</span>
+                        <input class="cs-input" type="text" id="lname" name="lname" placeholder="Johnson" autocomplete="family-name" required>
+                    </label>
+                </div>
+
+                <label class="cs-label" for="email">
+                    Email Address<span class="cs-required" aria-hidden="true">*</span>
+                    <input class="cs-input" type="email" id="email" name="email" placeholder="sarah@email.com" autocomplete="email" required>
+                </label>
+
+                <label class="cs-label" for="phone">
+                    Phone Number <span class="cs-optional">(optional — for SMS reminders)</span>
+                    <input class="cs-input" type="tel" id="phone" name="phone" placeholder="(618) 555-0100" autocomplete="tel">
+                </label>
+
+                <p class="cs-section-label">Tell Us a Little About Your Situation</p>
+
+                <label class="cs-label" for="state">
+                    What state do you foster in?
+                    <select class="cs-input cs-select" id="state" name="state">
+                        <option value="" disabled selected>Select your state</option>
+                        <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option>
+                        <option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option>
+                        <option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+                        <option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option>
+                        <option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option>
+                        <option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+                        <option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option>
+                        <option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option>
+                        <option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option>
+                        <option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option>
+                        <option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option>
+                        <option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option>
+                        <option>Wisconsin</option><option>Wyoming</option>
+                    </select>
+                </label>
+
+                <label class="cs-label" for="experience">
+                    How long have you been a foster parent?
+                    <select class="cs-input cs-select" id="experience" name="experience">
+                        <option value="" disabled selected>Select one</option>
+                        <option>I'm just getting started (not yet licensed)</option>
+                        <option>Less than 1 year</option>
+                        <option>1&ndash;3 years</option>
+                        <option>3&ndash;5 years</option>
+                        <option>5+ years</option>
+                    </select>
+                </label>
+
+                <label class="cs-label" for="children">
+                    How many foster children are currently in your home?
+                    <select class="cs-input cs-select" id="children" name="children">
+                        <option value="" disabled selected>Select one</option>
+                        <option>None right now (between placements)</option>
+                        <option>1 child</option>
+                        <option>2 children</option>
+                        <option>3 or more children</option>
+                    </select>
+                </label>
+
+                <div class="cs-label">
+                    <span>What behaviors are you dealing with most right now? <span class="cs-optional">(select all that apply)</span></span>
+                    <div class="cs-check-group">
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="Meltdowns and emotional outbursts"> Meltdowns and emotional outbursts</label>
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="Defiance and refusing to follow directions"> Defiance and refusing to follow directions</label>
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="Aggression toward others"> Aggression toward others</label>
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="School refusal or school-related issues"> School refusal or school-related issues</label>
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="Lying or stealing"> Lying or stealing</label>
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="Food hoarding or mealtime issues"> Food hoarding or mealtime issues</label>
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="Sleep problems or bedtime battles"> Sleep problems or bedtime battles</label>
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="Regression or baby-like behavior"> Regression or baby-like behavior</label>
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="Emotional withdrawal or shutdown"> Emotional withdrawal or shutdown</label>
+                        <label class="cs-check-item"><input type="checkbox" name="behaviors" value="Escalation around visitation"> Escalation around visitation</label>
+                    </div>
+                </div>
+
+                <label class="cs-label" for="goal">
+                    What would change for you if you had the right support? <span class="cs-optional">(optional)</span>
+                    <textarea class="cs-input cs-textarea" id="goal" name="goal" placeholder="Feel free to share anything — there are no wrong answers here..."></textarea>
+                </label>
+
+                <label class="cs-label" for="referral">
+                    How did you hear about this workshop?
+                    <select class="cs-input cs-select" id="referral" name="referral">
+                        <option value="" disabled selected>Select one</option>
+                        <option>Facebook</option>
+                        <option>Instagram</option>
+                        <option>TikTok</option>
+                        <option>Facebook ad</option>
+                        <option>A friend or fellow foster parent</option>
+                        <option>My foster care agency</option>
+                        <option>Google search</option>
+                        <option>Podcast or YouTube</option>
+                        <option>Other</option>
+                    </select>
+                </label>
+
+                <p class="cs-privacy-note">
+                    Your information stays private. We will never sell or share your data. You'll receive workshop details and occasional emails from Redeemed Arrow — you can unsubscribe at any time.
+                </p>
+
+                <button class="cs-button-solid" type="submit">Save My Spot &mdash; It's Free</button>
+                <p class="cs-submit-sub">You'll receive the date, time, and Zoom link immediately after signing up.</p>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}
