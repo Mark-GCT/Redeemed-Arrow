@@ -6,15 +6,15 @@ module.exports = {
     address: {
         lineOne: "First Address Line",
         lineTwo: "Second Address Line",
-        city: "Swansea",
+        city: "Greater St. Louis Metro Area",
         state: "IL",
         zip: "62226",
         country: "US",
-        mapLink: "https://maps.app.goo.gl/eZJeSi1zbSJZzSGz5",
+        mapLink: "https://maps.app.goo.gl/vcgb2R8kAMidpzQu9",
     },
     socials: {
-        facebook: "https://www.facebook.com/rachael.specialeelmore",
-        mighty: "https://www.mightynetworks.com/redeemed-arrow-behavior-consulting",
+        facebook: "https://www.facebook.com/profile.php?id=61591234964206",
+        circle: "",
     },
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
     domain: "https://www.redeemedarrow.com",

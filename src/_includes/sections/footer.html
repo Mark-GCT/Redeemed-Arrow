@@ -13,17 +13,13 @@
             </p>
             <div class="cs-contact-info">
                 <span class="cs-header">Contact</span>
-                <a href="tel: {{ client.phoneForTel }}" class="cs-contact-link">
-                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/phone-w.svg" alt="icon" width="24" height="24" loading="lazy" decoding="async" aria-hidden="true">
-                    {{ client.phoneFormatted }}
-                </a>
                 <a href="mailto: {{ client.email }}" class="cs-contact-link">
                     <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/mail-w.svg" alt="icon" width="24" height="24" loading="lazy" decoding="async" aria-hidden="true">
                     {{ client.email }}
                 </a>
-                <a href="{{ client.address.mapLink }}" class="cs-contact-link">
+                <a href="{{ client.address.mapLink }}" class="cs-contact-link" target="_blank" rel="noopener noreferrer">
                     <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/pin-w.svg" alt="icon" width="24" height="24" loading="lazy" decoding="async" aria-hidden="true">
-                    {{ client.address.city }}, {{ client.address.state }} {{ client.address.zip }}
+                    {{ client.address.city }}
                 </a>
             </div>
             <div class="cs-social">
@@ -31,8 +27,8 @@
                 <a href="{{ client.socials.facebook }}" class="cs-social-link" aria-label="visit facebook">
                     <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/face-w.svg" alt="icon" width="12" height="12" loading="lazy" decoding="async" aria-hidden="true">
                 </a>
-                <a href="{{ client.socials.mighty }}" class="cs-social-link" aria-label="visit mighty">
-                    <img class="cs-social-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/x-w.svg" alt="icon" width="12" height="12" loading="lazy" decoding="async" aria-hidden="true">
+                <a href="{{ client.socials.circle }}" class="cs-social-link" aria-label="visit circle">
+                    <img class="cs-social-icon" src="/assets/svgs/Circle.svg" alt="icon" width="12" height="12" loading="lazy" decoding="async" aria-hidden="true">
                 </a>
             </div>
         </div>
