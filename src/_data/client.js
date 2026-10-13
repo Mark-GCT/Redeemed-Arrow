@@ -14,7 +14,7 @@ module.exports = {
     },
     socials: {
         facebook: "https://www.facebook.com/profile.php?id=61591234964206",
-        circle: "",
+        circle: "https://redeemed-arrow-behavior-consulting.circle.so/",
     },
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
     domain: "https://www.redeemedarrow.com",
